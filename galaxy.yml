@@ -4,7 +4,7 @@ authors:
 dependencies:
   "ansible.netcommon": "*"
 license_file: LICENSE
-name: skydive
-namespace: skydive
+name: frr
+namespace: frr
 readme: README.rst
-repository: https://github.com/ansible-collections/skydive
+repository: https://github.com/ansible-collections/frr
