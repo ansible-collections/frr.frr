@@ -26,7 +26,6 @@ You can also include it in a `requirements.yml` file and install it with `ansibl
 ---
 collections:
   - name: frr.frr
-    version: 1.0.0
 ```
 ## Using this collection
 
