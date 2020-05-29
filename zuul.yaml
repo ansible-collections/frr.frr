@@ -1,7 +1,0 @@
----
-- project:
-    check:
-      jobs:
-        - ansible-test-units-frr:
-            vars:
-              ansible_test_collections: true
