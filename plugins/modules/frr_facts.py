@@ -9,13 +9,8 @@ from __future__ import absolute_import, division, print_function
 __metaclass__ = type
 
 
-ANSIBLE_METADATA = {
-    "metadata_version": "1.1",
-    "status": ["preview"],
-    "supported_by": "network",
-}
-
-DOCUMENTATION = """module: frr_facts
+DOCUMENTATION = """
+module: frr_facts
 author: Nilashish Chakraborty (@NilashishC)
 short_description: Collect facts from remote devices running Free Range Routing (FRR).
 description:
@@ -23,6 +18,7 @@ description:
   module prepends all of the base network fact keys with C(ansible_net_<fact>).  The
   facts module will always collect a base set of facts from the device and can enable
   or disable collection of additional facts.
+version_added: 1.0.0
 notes:
 - Tested against FRR 6.0.
 options:
@@ -39,24 +35,24 @@ options:
 
 EXAMPLES = """
 - name: Collect all facts from the device
-  frr_facts:
+  frr.frr.frr_facts:
     gather_subset: all
 
 - name: Collect only the config and default facts
-  frr_facts:
+  frr.frr.frr_facts:
     gather_subset:
-      - config
+    - config
 
 - name: Collect the config and hardware facts
-  frr_facts:
+  frr.frr.frr_facts:
     gather_subset:
-      - config
-      - hardware
+    - config
+    - hardware
 
 - name: Do not collect hardware facts
-  frr_facts:
+  frr.frr.frr_facts:
     gather_subset:
-      - "!hardware"
+    - '!hardware'
 """
 
 RETURN = """
