@@ -10,19 +10,14 @@ from __future__ import absolute_import, division, print_function
 __metaclass__ = type
 
 
-ANSIBLE_METADATA = {
-    "metadata_version": "1.1",
-    "status": ["preview"],
-    "supported_by": "network",
-}
-
-
-DOCUMENTATION = """module: frr_bgp
+DOCUMENTATION = """
+module: frr_bgp
 author: Nilashish Chakraborty (@NilashishC)
 short_description: Configure global BGP settings on Free Range Routing(FRR).
 description:
 - This module provides configuration management of global BGP parameters on devices
   running Free Range Routing(FRR).
+version_added: 1.0.0
 notes:
 - Tested against FRRouting 6.0.
 options:
@@ -38,7 +33,6 @@ options:
       router_id:
         description:
         - Configures the BGP routing process router-id value.
-        default: null
       log_neighbor_changes:
         description:
         - Enable/disable logging neighbor up/down and reset reason.
@@ -250,84 +244,84 @@ options:
 
 EXAMPLES = """
 - name: configure global bgp as 64496
-  frr_bgp:
+  frr.frr.frr_bgp:
     config:
       bgp_as: 64496
       router_id: 192.0.2.1
-      log_neighbor_changes: True
+      log_neighbor_changes: true
       neighbors:
-        - neighbor: 192.51.100.1
-          remote_as: 64497
-          timers:
-            keepalive: 120
-            holdtime: 360
-        - neighbor: 198.51.100.2
-          remote_as: 64498
+      - neighbor: 192.51.100.1
+        remote_as: 64497
+        timers:
+          keepalive: 120
+          holdtime: 360
+      - neighbor: 198.51.100.2
+        remote_as: 64498
       networks:
-        - prefix: 192.0.2.0
-          masklen: 24
-          route_map: RMAP_1
-        - prefix: 198.51.100.0
-          masklen: 24
+      - prefix: 192.0.2.0
+        masklen: 24
+        route_map: RMAP_1
+      - prefix: 198.51.100.0
+        masklen: 24
       address_family:
-        - afi: ipv4
-          safi: unicast
-          redistribute:
-            - protocol: ospf
-              id: 223
-              metric: 10
+      - afi: ipv4
+        safi: unicast
+        redistribute:
+        - protocol: ospf
+          id: 223
+          metric: 10
     operation: merge
 
 - name: Configure BGP neighbors
-  frr_bgp:
+  frr.frr.frr_bgp:
     config:
       bgp_as: 64496
       neighbors:
-        - neighbor: 192.0.2.10
-          remote_as: 64496
-          password: ansible
-          description: IBGP_NBR_1
-          timers:
-            keepalive: 120
-            holdtime: 360
-        - neighbor: 192.0.2.15
-          remote_as: 64496
-          description: IBGP_NBR_2
-          advertisement_interval: 120
+      - neighbor: 192.0.2.10
+        remote_as: 64496
+        password: ansible
+        description: IBGP_NBR_1
+        timers:
+          keepalive: 120
+          holdtime: 360
+      - neighbor: 192.0.2.15
+        remote_as: 64496
+        description: IBGP_NBR_2
+        advertisement_interval: 120
     operation: merge
 
 - name: Configure BGP neighbors under address family mode
-  frr_bgp:
+  frr.frr.frr_bgp:
     config:
       bgp_as: 64496
       address_family:
-        - afi: ipv4
-          safi: multicast
-          neighbors:
-            - neighbor: 203.0.113.10
-              activate: yes
-              maximum_prefix: 250
+      - afi: ipv4
+        safi: multicast
+        neighbors:
+        - neighbor: 203.0.113.10
+          activate: yes
+          maximum_prefix: 250
 
-            - neighbor: 192.0.2.15
-              activate: yes
-              route_reflector_client: True
+        - neighbor: 192.0.2.15
+          activate: yes
+          route_reflector_client: true
     operation: merge
 
 - name: Configure root-level networks for BGP
-  frr_bgp:
+  frr.frr.frr_bgp:
     config:
       bgp_as: 64496
       networks:
-        - prefix: 203.0.113.0
-          masklen: 27
-          route_map: RMAP_1
-        - prefix: 203.0.113.32
-          masklen: 27
-          route_map: RMAP_2
+      - prefix: 203.0.113.0
+        masklen: 27
+        route_map: RMAP_1
+      - prefix: 203.0.113.32
+        masklen: 27
+        route_map: RMAP_2
     operation: merge
 
 - name: remove bgp as 64496 from config
-  frr_bgp:
+  frr.frr.frr_bgp:
     config:
       bgp_as: 64496
     operation: delete
