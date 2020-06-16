@@ -8,7 +8,7 @@ The Ansible FRR collection includes a variety of Ansible content to help automat
 This collection has been tested against FRR 6.0.
 
 <!--start requires_ansible-->
-## Compatible Ansible versions:
+## Ansible version compatibility:
 
 Plugins and modules within a collection may be tested with only specific Ansible versions. 
 A collection may contain metadata that identifies these versions. 
