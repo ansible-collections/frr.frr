@@ -7,7 +7,17 @@ The Ansible FRR collection includes a variety of Ansible content to help automat
 
 This collection has been tested against FRR 6.0.
 
-### Supported connections
+<!--start requires_ansible-->
+## Compatible Ansible versions:
+
+Plugins and modules within a collection may be tested with only specific Ansible versions. 
+A collection may contain metadata that identifies these versions. 
+PEP440 is the schema used to describe the version of Ansible.
+
+This collection has been tested against following Ansible version: >=2.9,<2.11.
+<!--end requires_ansible-->
+
+## Supported connections
 The FRR collection supports ``network_cli`` connections.
 
 ## Included content
