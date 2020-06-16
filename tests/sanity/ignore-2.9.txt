@@ -12,14 +12,10 @@ plugins/module_utils/network/frr/providers/module.py future-import-boilerplate
 plugins/module_utils/network/frr/providers/module.py metaclass-boilerplate
 plugins/module_utils/network/frr/providers/providers.py future-import-boilerplate
 plugins/module_utils/network/frr/providers/providers.py metaclass-boilerplate
-plugins/modules/frr_bgp.py validate-modules:doc-elements-mismatch
 plugins/modules/frr_bgp.py validate-modules:doc-missing-type
-plugins/modules/frr_bgp.py validate-modules:doc-required-mismatch
-plugins/modules/frr_bgp.py validate-modules:invalid-ansiblemodule-schema
 plugins/modules/frr_bgp.py validate-modules:nonexistent-parameter-documented
 plugins/modules/frr_bgp.py validate-modules:parameter-type-not-in-doc
 plugins/modules/frr_bgp.py validate-modules:undocumented-parameter
-plugins/modules/frr_facts.py validate-modules:parameter-list-no-elements
 plugins/modules/frr_facts.py validate-modules:parameter-type-not-in-doc
 tests/unit/mock/path.py future-import-boilerplate
 tests/unit/mock/path.py metaclass-boilerplate
