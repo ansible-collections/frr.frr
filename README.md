@@ -14,7 +14,7 @@ Plugins and modules within a collection may be tested with only specific Ansible
 A collection may contain metadata that identifies these versions. 
 PEP440 is the schema used to describe the version of Ansible.
 
-This collection has been tested against following Ansible version: >=2.9,<2.11.
+This collection has been tested against following Ansible versions: >=2.9,<2.11.
 <!--end requires_ansible-->
 
 ## Supported connections
