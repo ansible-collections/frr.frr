@@ -1,5 +1,6 @@
+:orphan:
 
-.. _frr.frr.frr_bgp_:
+.. _frr.frr.frr_bgp_module:
 
 
 ***************
@@ -32,7 +33,6 @@ Parameters
         <tr>
             <th colspan="4">Parameter</th>
             <th>Choices/<font color="blue">Defaults</font></th>
-                            <th>Configuration</th>
                         <th width="100%">Comments</th>
         </tr>
                     <tr>
@@ -46,9 +46,7 @@ Parameters
                                     </td>
                                 <td>
                                                                                                                                                             </td>
-                                                    <td>
-                                                                                            </td>
-                                                <td>
+                                                                <td>
                                             <div>Specifies the BGP related configuration.</div>
                                                         </td>
             </tr>
@@ -64,9 +62,7 @@ Parameters
                                     </td>
                                 <td>
                                                                                                                                                             </td>
-                                                    <td>
-                                                                                            </td>
-                                                <td>
+                                                                <td>
                                             <div>Specifies BGP address family related configurations.</div>
                                                         </td>
             </tr>
@@ -87,9 +83,7 @@ Parameters
                                                                                                                                                                                                 <li>ipv6</li>
                                                                                     </ul>
                                                                             </td>
-                                                    <td>
-                                                                                            </td>
-                                                <td>
+                                                                <td>
                                             <div>Type of address family to configure.</div>
                                                         </td>
             </tr>
@@ -106,9 +100,7 @@ Parameters
                                     </td>
                                 <td>
                                                                                                                                                             </td>
-                                                    <td>
-                                                                                            </td>
-                                                <td>
+                                                                <td>
                                             <div>Specifies BGP neighbor related configurations in Address Family configuration mode.</div>
                                                         </td>
             </tr>
@@ -130,9 +122,7 @@ Parameters
                                                                                                                                                                                                 <li>yes</li>
                                                                                     </ul>
                                                                             </td>
-                                                    <td>
-                                                                                            </td>
-                                                <td>
+                                                                <td>
                                             <div>Enable the address family for this neighbor.</div>
                                                         </td>
             </tr>
@@ -150,9 +140,7 @@ Parameters
                                     </td>
                                 <td>
                                                                                                                                                             </td>
-                                                    <td>
-                                                                                            </td>
-                                                <td>
+                                                                <td>
                                             <div>Maximum number of prefixes to accept from this peer.</div>
                                             <div>The range is from 1 to 4294967295.</div>
                                                         </td>
@@ -171,9 +159,7 @@ Parameters
                                     </td>
                                 <td>
                                                                                                                                                             </td>
-                                                    <td>
-                                                                                            </td>
-                                                <td>
+                                                                <td>
                                             <div>Neighbor router address.</div>
                                                         </td>
             </tr>
@@ -195,9 +181,7 @@ Parameters
                                                                                                                                                                                                 <li>yes</li>
                                                                                     </ul>
                                                                             </td>
-                                                    <td>
-                                                                                            </td>
-                                                <td>
+                                                                <td>
                                             <div>Enable/disable the next hop calculation for this neighbor.</div>
                                                         </td>
             </tr>
@@ -219,9 +203,7 @@ Parameters
                                                                                                                                                                                                 <li>yes</li>
                                                                                     </ul>
                                                                             </td>
-                                                    <td>
-                                                                                            </td>
-                                                <td>
+                                                                <td>
                                             <div>Remove the private AS number from outbound updates.</div>
                                                         </td>
             </tr>
@@ -243,9 +225,7 @@ Parameters
                                                                                                                                                                                                 <li>yes</li>
                                                                                     </ul>
                                                                             </td>
-                                                    <td>
-                                                                                            </td>
-                                                <td>
+                                                                <td>
                                             <div>Specify a neighbor as a route reflector client.</div>
                                                         </td>
             </tr>
@@ -267,9 +247,7 @@ Parameters
                                                                                                                                                                                                 <li>yes</li>
                                                                                     </ul>
                                                                             </td>
-                                                    <td>
-                                                                                            </td>
-                                                <td>
+                                                                <td>
                                             <div>Specify a neighbor as a route server client.</div>
                                                         </td>
             </tr>
@@ -287,9 +265,7 @@ Parameters
                                     </td>
                                 <td>
                                                                                                                                                             </td>
-                                                    <td>
-                                                                                            </td>
-                                                <td>
+                                                                <td>
                                             <div>Specify networks to announce via BGP.</div>
                                             <div>For operation replace, this option is mutually exclusive with root level networks option.</div>
                                                         </td>
@@ -308,9 +284,7 @@ Parameters
                                     </td>
                                 <td>
                                                                                                                                                             </td>
-                                                    <td>
-                                                                                            </td>
-                                                <td>
+                                                                <td>
                                             <div>Subnet mask length for the network to announce(e.g, 8, 16, 24, etc.).</div>
                                                         </td>
             </tr>
@@ -328,9 +302,7 @@ Parameters
                                     </td>
                                 <td>
                                                                                                                                                             </td>
-                                                    <td>
-                                                                                            </td>
-                                                <td>
+                                                                <td>
                                             <div>Network ID to announce via BGP.</div>
                                                         </td>
             </tr>
@@ -348,9 +320,7 @@ Parameters
                                     </td>
                                 <td>
                                                                                                                                                             </td>
-                                                    <td>
-                                                                                            </td>
-                                                <td>
+                                                                <td>
                                             <div>Route map to modify the attributes.</div>
                                                         </td>
             </tr>
@@ -368,9 +338,7 @@ Parameters
                                     </td>
                                 <td>
                                                                                                                                                             </td>
-                                                    <td>
-                                                                                            </td>
-                                                <td>
+                                                                <td>
                                             <div>Specifies the redistribute information from another routing protocol.</div>
                                                         </td>
             </tr>
@@ -388,9 +356,7 @@ Parameters
                                     </td>
                                 <td>
                                                                                                                                                             </td>
-                                                    <td>
-                                                                                            </td>
-                                                <td>
+                                                                <td>
                                             <div>Specifies the instance ID/table ID for this protocol</div>
                                             <div>Valid for ospf and table</div>
                                                         </td>
@@ -409,9 +375,7 @@ Parameters
                                     </td>
                                 <td>
                                                                                                                                                             </td>
-                                                    <td>
-                                                                                            </td>
-                                                <td>
+                                                                <td>
                                             <div>Specifies the metric for redistributed routes.</div>
                                                         </td>
             </tr>
@@ -443,9 +407,7 @@ Parameters
                                                                                                                                                                                                 <li>rip</li>
                                                                                     </ul>
                                                                             </td>
-                                                    <td>
-                                                                                            </td>
-                                                <td>
+                                                                <td>
                                             <div>Specifies the protocol for configuring redistribute information.</div>
                                                         </td>
             </tr>
@@ -463,9 +425,7 @@ Parameters
                                     </td>
                                 <td>
                                                                                                                                                             </td>
-                                                    <td>
-                                                                                            </td>
-                                                <td>
+                                                                <td>
                                             <div>Specifies the route map reference.</div>
                                                         </td>
             </tr>
@@ -489,9 +449,7 @@ Parameters
                                                                                                                                                                                                 <li>labeled-unicast</li>
                                                                                     </ul>
                                                                             </td>
-                                                    <td>
-                                                                                            </td>
-                                                <td>
+                                                                <td>
                                             <div>Specifies the type of cast for the address family.</div>
                                                         </td>
             </tr>
@@ -508,9 +466,7 @@ Parameters
                                     </td>
                                 <td>
                                                                                                                                                             </td>
-                                                    <td>
-                                                                                            </td>
-                                                <td>
+                                                                <td>
                                             <div>Specifies the BGP Autonomous System (AS) number to configure on the device.</div>
                                                         </td>
             </tr>
@@ -530,9 +486,7 @@ Parameters
                                                                                                                                                                                                 <li>yes</li>
                                                                                     </ul>
                                                                             </td>
-                                                    <td>
-                                                                                            </td>
-                                                <td>
+                                                                <td>
                                             <div>Enable/disable logging neighbor up/down and reset reason.</div>
                                                         </td>
             </tr>
@@ -548,9 +502,7 @@ Parameters
                                     </td>
                                 <td>
                                                                                                                                                             </td>
-                                                    <td>
-                                                                                            </td>
-                                                <td>
+                                                                <td>
                                             <div>Specifies BGP neighbor related configurations.</div>
                                                         </td>
             </tr>
@@ -567,9 +519,7 @@ Parameters
                                     </td>
                                 <td>
                                                                                                                                                             </td>
-                                                    <td>
-                                                                                            </td>
-                                                <td>
+                                                                <td>
                                             <div>Minimum interval between sending BGP routing updates for this neighbor.</div>
                                                         </td>
             </tr>
@@ -586,9 +536,7 @@ Parameters
                                     </td>
                                 <td>
                                                                                                                                                             </td>
-                                                    <td>
-                                                                                            </td>
-                                                <td>
+                                                                <td>
                                             <div>Neighbor specific description.</div>
                                                         </td>
             </tr>
@@ -605,9 +553,7 @@ Parameters
                                     </td>
                                 <td>
                                                                                                                                                             </td>
-                                                    <td>
-                                                                                            </td>
-                                                <td>
+                                                                <td>
                                             <div>Specifies the maximum hop count for EBGP neighbors not on directly connected networks.</div>
                                             <div>The range is from 1 to 255.</div>
                                                         </td>
@@ -629,9 +575,7 @@ Parameters
                                                                                                                                                                                                 <li>yes</li>
                                                                                     </ul>
                                                                             </td>
-                                                    <td>
-                                                                                            </td>
-                                                <td>
+                                                                <td>
                                             <div>Administratively shutdown or enable a neighbor.</div>
                                                         </td>
             </tr>
@@ -648,9 +592,7 @@ Parameters
                                     </td>
                                 <td>
                                                                                                                                                             </td>
-                                                    <td>
-                                                                                            </td>
-                                                <td>
+                                                                <td>
                                             <div>The local AS number for the neighbor.</div>
                                                         </td>
             </tr>
@@ -667,9 +609,7 @@ Parameters
                                     </td>
                                 <td>
                                                                                                                                                             </td>
-                                                    <td>
-                                                                                            </td>
-                                                <td>
+                                                                <td>
                                             <div>Neighbor router address.</div>
                                                         </td>
             </tr>
@@ -686,9 +626,7 @@ Parameters
                                     </td>
                                 <td>
                                                                                                                                                             </td>
-                                                    <td>
-                                                                                            </td>
-                                                <td>
+                                                                <td>
                                             <div>Password to authenticate the BGP peer connection.</div>
                                                         </td>
             </tr>
@@ -705,9 +643,7 @@ Parameters
                                     </td>
                                 <td>
                                                                                                                                                             </td>
-                                                    <td>
-                                                                                            </td>
-                                                <td>
+                                                                <td>
                                             <div>Name of the peer group that the neighbor is a member of.</div>
                                                         </td>
             </tr>
@@ -724,9 +660,7 @@ Parameters
                                     </td>
                                 <td>
                                                                                                                                                             </td>
-                                                    <td>
-                                                                                            </td>
-                                                <td>
+                                                                <td>
                                             <div>The TCP Port number to use for this neighbor.</div>
                                             <div>The range is from 0 to 65535.</div>
                                                         </td>
@@ -744,9 +678,7 @@ Parameters
                                     </td>
                                 <td>
                                                                                                                                                             </td>
-                                                    <td>
-                                                                                            </td>
-                                                <td>
+                                                                <td>
                                             <div>Remote AS of the BGP neighbor to configure.</div>
                                                         </td>
             </tr>
@@ -763,9 +695,7 @@ Parameters
                                     </td>
                                 <td>
                                                                                                                                                             </td>
-                                                    <td>
-                                                                                            </td>
-                                                <td>
+                                                                <td>
                                             <div>Specifies BGP neighbor timer related configurations.</div>
                                                         </td>
             </tr>
@@ -783,9 +713,7 @@ Parameters
                                     </td>
                                 <td>
                                                                                                                                                             </td>
-                                                    <td>
-                                                                                            </td>
-                                                <td>
+                                                                <td>
                                             <div>Interval (in seconds) after not receiving a keepalive message that FRR declares a peer dead.</div>
                                             <div>The range is from 0 to 65535.</div>
                                                         </td>
@@ -804,9 +732,7 @@ Parameters
                                     </td>
                                 <td>
                                                                                                                                                             </td>
-                                                    <td>
-                                                                                            </td>
-                                                <td>
+                                                                <td>
                                             <div>Frequency (in seconds) with which the FRR sends keepalive messages to its peer.</div>
                                             <div>The range is from 0 to 65535.</div>
                                                         </td>
@@ -825,9 +751,7 @@ Parameters
                                     </td>
                                 <td>
                                                                                                                                                             </td>
-                                                    <td>
-                                                                                            </td>
-                                                <td>
+                                                                <td>
                                             <div>Source of the routing updates.</div>
                                                         </td>
             </tr>
@@ -844,9 +768,7 @@ Parameters
                                     </td>
                                 <td>
                                                                                                                                                             </td>
-                                                    <td>
-                                                                                            </td>
-                                                <td>
+                                                                <td>
                                             <div>Specify networks to announce via BGP.</div>
                                             <div>For operation replace, this option is mutually exclusive with networks option under address_family.</div>
                                             <div>For operation replace, if the device already has an address family activated, this option is not allowed.</div>
@@ -865,9 +787,7 @@ Parameters
                                     </td>
                                 <td>
                                                                                                                                                             </td>
-                                                    <td>
-                                                                                            </td>
-                                                <td>
+                                                                <td>
                                             <div>Subnet mask length for the network to announce(e.g, 8, 16, 24, etc.).</div>
                                                         </td>
             </tr>
@@ -884,9 +804,7 @@ Parameters
                                     </td>
                                 <td>
                                                                                                                                                             </td>
-                                                    <td>
-                                                                                            </td>
-                                                <td>
+                                                                <td>
                                             <div>Network ID to announce via BGP.</div>
                                                         </td>
             </tr>
@@ -903,9 +821,7 @@ Parameters
                                     </td>
                                 <td>
                                                                                                                                                             </td>
-                                                    <td>
-                                                                                            </td>
-                                                <td>
+                                                                <td>
                                             <div>Route map to modify the attributes.</div>
                                                         </td>
             </tr>
@@ -922,9 +838,7 @@ Parameters
                                     </td>
                                 <td>
                                                                                                                                                             </td>
-                                                    <td>
-                                                                                            </td>
-                                                <td>
+                                                                <td>
                                             <div>Configures the BGP routing process router-id value.</div>
                                                         </td>
             </tr>
@@ -946,9 +860,7 @@ Parameters
                                                                                                                                                                                                 <li>delete</li>
                                                                                     </ul>
                                                                             </td>
-                                                    <td>
-                                                                                            </td>
-                                                <td>
+                                                                <td>
                                             <div>Specifies the operation to be performed on the BGP process configured on the device.</div>
                                             <div>In case of merge, the input configuration will be merged with the existing BGP configuration on the device.</div>
                                             <div>In case of replace, if there is a diff between the existing configuration and the input configuration, the existing configuration will be replaced by the input configuration for every option that has the diff.</div>
@@ -1062,7 +974,7 @@ Examples
 
 Return Values
 -------------
-Common return values are documented `here <https://docs.ansible.com/ansible/latest/reference_appendices/common_return_values.html#common-return-values>`_, the following are the fields unique to this :
+Common return values are documented `here <https://docs.ansible.com/ansible/latest/reference_appendices/common_return_values.html#common-return-values>`_, the following are the fields unique to this module:
 
 .. raw:: html
 

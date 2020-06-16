@@ -1,5 +1,6 @@
+:orphan:
 
-.. _frr.frr.frr_facts_:
+.. _frr.frr.frr_facts_module:
 
 
 *****************
@@ -32,7 +33,6 @@ Parameters
         <tr>
             <th colspan="1">Parameter</th>
             <th>Choices/<font color="blue">Defaults</font></th>
-                            <th>Configuration</th>
                         <th width="100%">Comments</th>
         </tr>
                     <tr>
@@ -47,9 +47,7 @@ Parameters
                                 <td>
                                                                                                                                                                     <b>Default:</b><br/><div style="color: blue">"!config"</div>
                                     </td>
-                                                    <td>
-                                                                                            </td>
-                                                <td>
+                                                                <td>
                                             <div>When supplied, this argument restricts the facts collected to a given subset.</div>
                                             <div>Possible values for this argument include <code>all</code>, <code>hardware</code>, <code>config</code>, and <code>interfaces</code>.</div>
                                             <div>Specify a list of values to include a larger subset.</div>
@@ -99,7 +97,7 @@ Examples
 
 Return Values
 -------------
-Common return values are documented `here <https://docs.ansible.com/ansible/latest/reference_appendices/common_return_values.html#common-return-values>`_, the following are the fields unique to this :
+Common return values are documented `here <https://docs.ansible.com/ansible/latest/reference_appendices/common_return_values.html#common-return-values>`_, the following are the fields unique to this module:
 
 .. raw:: html
 
