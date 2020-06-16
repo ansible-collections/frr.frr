@@ -22,11 +22,11 @@ The FRR collection supports ``network_cli`` connections.
 
 ## Included content
 <!--start collection content-->
-## Cliconf plugins
+### Cliconf plugins
 Name | Description
 --- | ---
 [frr.frr.frr](https://github.com/ansible-collections/frr.frr/blob/master/docs/frr.frr.frr.rst)|Use frr cliconf to run command on Free Range Routing platform
-## Modules
+### Modules
 Name | Description
 --- | ---
 [frr.frr.frr_bgp](https://github.com/ansible-collections/frr.frr/blob/master/docs/frr.frr.frr_bgp.rst)|Configure global BGP settings on Free Range Routing(FRR).
