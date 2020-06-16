@@ -12,7 +12,7 @@ This collection has been tested against FRR 6.0.
 
 Plugins and modules within a collection may be tested with only specific Ansible versions. 
 A collection may contain metadata that identifies these versions. 
-PEP440 is the schema used to describe the version of Ansible.
+PEP440 is the schema used to describe the versions of Ansible.
 
 This collection has been tested against following Ansible versions: **>=2.9,<2.11**.
 <!--end requires_ansible-->
