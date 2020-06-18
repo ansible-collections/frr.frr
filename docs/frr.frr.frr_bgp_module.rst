@@ -1,5 +1,3 @@
-:orphan:
-
 .. _frr.frr.frr_bgp_module:
 
 
