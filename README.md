@@ -7,20 +7,32 @@ The Ansible FRR collection includes a variety of Ansible content to help automat
 
 This collection has been tested against FRR 6.0.
 
+<!--start requires_ansible-->
+## Ansible version compatibility
+
+This collection has been tested against following Ansible versions: **>=2.9.10,<2.11**.
+
+Plugins and modules within a collection may be tested with only specific Ansible versions. 
+A collection may contain metadata that identifies these versions. 
+PEP440 is the schema used to describe the versions of Ansible.
+<!--end requires_ansible-->
+
 ### Supported connections
 The FRR collection supports ``network_cli`` connections.
 
 ## Included content
 <!--start collection content-->
-## Cliconf plugins
+### Cliconf plugins
 Name | Description
 --- | ---
-[frr.frr.frr](https://github.com/ansible-collections/frr.frr/blob/master/docs/frr.frr.frr.rst)|Use frr cliconf to run command on Free Range Routing platform
-## Modules
+[frr.frr.frr](https://github.com/ansible-collections/frr.frr/blob/master/docs/frr.frr.frr_cliconf.rst)|Use frr cliconf to run command on Free Range Routing platform
+
+### Modules
 Name | Description
 --- | ---
-[frr.frr.frr_bgp](https://github.com/ansible-collections/frr.frr/blob/master/docs/frr.frr.frr_bgp.rst)|Configure global BGP settings on Free Range Routing(FRR).
-[frr.frr.frr_facts](https://github.com/ansible-collections/frr.frr/blob/master/docs/frr.frr.frr_facts.rst)|Collect facts from remote devices running Free Range Routing (FRR).
+[frr.frr.frr_bgp](https://github.com/ansible-collections/frr.frr/blob/master/docs/frr.frr.frr_bgp_module.rst)|Configure global BGP settings on Free Range Routing(FRR).
+[frr.frr.frr_facts](https://github.com/ansible-collections/frr.frr/blob/master/docs/frr.frr.frr_facts_module.rst)|Collect facts from remote devices running Free Range Routing (FRR).
+
 <!--end collection content-->
 
 Click the ``Content`` button to see the list of content included in this collection.
