@@ -12,8 +12,8 @@ This collection has been tested against FRR 6.0.
 
 This collection has been tested against following Ansible versions: **>=2.9.10,<2.11**.
 
-Plugins and modules within a collection may be tested with only specific Ansible versions. 
-A collection may contain metadata that identifies these versions. 
+Plugins and modules within a collection may be tested with only specific Ansible versions.
+A collection may contain metadata that identifies these versions.
 PEP440 is the schema used to describe the versions of Ansible.
 <!--end requires_ansible-->
 
@@ -87,22 +87,7 @@ The following example task replaces configuration changes in the existing config
       operation: merge
 ```
 
-Alternately, you can call modules by their short name if you list the `frr.frr` collection in the playbook's `collections`, as follows:
-
-```yaml
----
-- hosts: frr01
-  gather_facts: false
-  connection: network_cli
-
-  collections:
-    - frr.frr
-
-  tasks:
-    - name: Collect all facts from the device
-      frr_facts:
-        gather_subset: all
-```
+**NOTE**: For Ansible 2.9, you may not see deprecation warnings when you run your playbooks with this collection. Use this documentation to track when a module is deprecated.
 
 
 ### See Also:
@@ -112,7 +97,7 @@ Alternately, you can call modules by their short name if you list the `frr.frr` 
 
 ## Contributing to this collection
 
-We welcome community contributions to this collection. If you find problems, please open an issue or create a PR against the [FRR collection repository](https://github.com/ansible-collections/frr.frr).
+We welcome community contributions to this collection. If you find problems, please open an issue or create a PR against the [FRR collection repository](https://github.com/ansible-collections/frr.frr). See [Contributing to Ansible-maintained collections](https://docs.ansible.com/ansible/devel/community/contributing_maintained_collections.html#contributing-maintained-collections) for complete details.
 
 You can also join us on:
 
@@ -120,6 +105,11 @@ You can also join us on:
 - Slack - https://ansiblenetwork.slack.com
 
 See the [Ansible Community Guide](https://docs.ansible.com/ansible/latest/community/index.html) for details on contributing to Ansible.
+
+### Code of Conduct
+This collection follows the Ansible project's
+[Code of Conduct](https://docs.ansible.com/ansible/devel/community/code_of_conduct.html).
+Please read and familiarize yourself with this document.
 
 
 ## Changelogs
