@@ -1,0 +1,16 @@
+ancestor: null
+releases:
+  1.0.0:
+    modules:
+    - description: Configure global BGP settings on Free Range Routing(FRR).
+      name: frr_bgp
+      namespace: ''
+    - description: Collect facts from remote devices running Free Range Routing (FRR).
+      name: frr_facts
+      namespace: ''
+    plugins:
+      cliconf:
+      - description: Use frr cliconf to run command on Free Range Routing platform
+        name: frr
+        namespace: null
+    release_date: '2020-06-23'
