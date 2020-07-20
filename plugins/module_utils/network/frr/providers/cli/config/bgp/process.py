@@ -2,6 +2,12 @@
 # (c) 2019, Ansible by Red Hat, inc
 # GNU General Public License v3.0+ (see COPYING or https://www.gnu.org/licenses/gpl-3.0.txt)
 #
+
+from __future__ import absolute_import, division, print_function
+
+__metaclass__ = type
+
+
 import re
 
 from ansible.module_utils.six import iteritems
@@ -21,22 +27,20 @@ from ansible_collections.frr.frr.plugins.module_utils.network.frr.providers.cli.
     AddressFamily,
 )
 
-REDISTRIBUTE_PROTOCOLS = frozenset(
-    [
-        "ospf",
-        "ospf6",
-        "eigrp",
-        "isis",
-        "table",
-        "static",
-        "connected",
-        "sharp",
-        "nhrp",
-        "kernel",
-        "babel",
-        "rip",
-    ]
-)
+REDISTRIBUTE_PROTOCOLS = [
+    "ospf",
+    "ospf6",
+    "eigrp",
+    "isis",
+    "table",
+    "static",
+    "connected",
+    "sharp",
+    "nhrp",
+    "kernel",
+    "babel",
+    "rip",
+]
 
 
 @register_provider("frr", "frr_bgp")

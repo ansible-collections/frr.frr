@@ -31,6 +31,8 @@ options:
     - Use a value with an initial C(!) to collect all facts except that subset.
     required: false
     default: '!config'
+    type: list
+    elements: str
 """
 
 EXAMPLES = """
@@ -356,7 +358,9 @@ VALID_SUBSETS = frozenset(FACT_SUBSETS.keys())
 def main():
     """main entry point for module execution
     """
-    argument_spec = dict(gather_subset=dict(default=["!config"], type="list"))
+    argument_spec = dict(
+        gather_subset=dict(default=["!config"], type="list", elements="str")
+    )
 
     module = AnsibleModule(
         argument_spec=argument_spec, supports_check_mode=True
