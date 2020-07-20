@@ -24,6 +24,7 @@ options:
   config:
     description:
     - Specifies the BGP related configuration.
+    type: dict
     suboptions:
       bgp_as:
         description:
@@ -33,6 +34,7 @@ options:
       router_id:
         description:
         - Configures the BGP routing process router-id value.
+        type: str
       log_neighbor_changes:
         description:
         - Enable/disable logging neighbor up/down and reset reason.
@@ -40,11 +42,14 @@ options:
       neighbors:
         description:
         - Specifies BGP neighbor related configurations.
+        type: list
+        elements: dict
         suboptions:
           neighbor:
             description:
             - Neighbor router address.
             required: true
+            type: str
           remote_as:
             description:
             - Remote AS of the BGP neighbor to configure.
@@ -53,9 +58,11 @@ options:
           update_source:
             description:
             - Source of the routing updates.
+            type: str
           password:
             description:
             - Password to authenticate the BGP peer connection.
+            type: str
           enabled:
             description:
             - Administratively shutdown or enable a neighbor.
@@ -63,6 +70,7 @@ options:
           description:
             description:
             - Neighbor specific description.
+            type: str
           ebgp_multihop:
             description:
             - Specifies the maximum hop count for EBGP neighbors not on directly connected
@@ -72,9 +80,11 @@ options:
           peer_group:
             description:
             - Name of the peer group that the neighbor is a member of.
+            type: str
           timers:
             description:
             - Specifies BGP neighbor timer related configurations.
+            type: dict
             suboptions:
               keepalive:
                 description:
@@ -110,20 +120,28 @@ options:
           under address_family.
         - For operation replace, if the device already has an address family activated,
           this option is not allowed.
+        type: list
+        elements: dict
         suboptions:
           prefix:
             description:
             - Network ID to announce via BGP.
             required: true
+            type: str
           masklen:
             description:
             - Subnet mask length for the network to announce(e.g, 8, 16, 24, etc.).
+            required: True
+            type: int
           route_map:
             description:
             - Route map to modify the attributes.
+            type: str
       address_family:
         description:
         - Specifies BGP address family related configurations.
+        type: list
+        elements: dict
         suboptions:
           afi:
             description:
@@ -132,6 +150,7 @@ options:
             - ipv4
             - ipv6
             required: true
+            type: str
           safi:
             description:
             - Specifies the type of cast for the address family.
@@ -141,9 +160,12 @@ options:
             - multicast
             - labeled-unicast
             default: unicast
+            type: str
           redistribute:
             description:
             - Specifies the redistribute information from another routing protocol.
+            type: list
+            elements: dict
             suboptions:
               protocol:
                 description:
@@ -162,41 +184,54 @@ options:
                 - babel
                 - rip
                 required: true
+                type: str
               id:
                 description:
                 - Specifies the instance ID/table ID for this protocol
                 - Valid for ospf and table
+                type: str
               metric:
                 description:
                 - Specifies the metric for redistributed routes.
+                type: int
               route_map:
                 description:
                 - Specifies the route map reference.
+                type: str
           networks:
             description:
             - Specify networks to announce via BGP.
             - For operation replace, this option is mutually exclusive with root level
               networks option.
+            type: list
+            elements: dict
             suboptions:
-              network:
+              prefix:
                 description:
                 - Network ID to announce via BGP.
                 required: true
+                type: str
               masklen:
                 description:
                 - Subnet mask length for the network to announce(e.g, 8, 16, 24, etc.).
+                required: True
+                type: int
               route_map:
                 description:
                 - Route map to modify the attributes.
+                type: str
           neighbors:
             description:
             - Specifies BGP neighbor related configurations in Address Family configuration
               mode.
+            type: list
+            elements: dict
             suboptions:
               neighbor:
                 description:
                 - Neighbor router address.
                 required: true
+                type: str
               route_reflector_client:
                 description:
                 - Specify a neighbor as a route reflector client.
@@ -240,6 +275,7 @@ options:
     - replace
     - override
     - delete
+    type: str
 """
 
 EXAMPLES = """
