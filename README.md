@@ -25,13 +25,13 @@ The FRR collection supports ``network_cli`` connections.
 ### Cliconf plugins
 Name | Description
 --- | ---
-[frr.frr.frr](https://github.com/ansible-collections/frr.frr/blob/master/docs/frr.frr.frr_cliconf.rst)|Use frr cliconf to run command on Free Range Routing platform
+[frr.frr.frr](https://github.com/ansible-collections/frr.frr/blob/main/docs/frr.frr.frr_cliconf.rst)|Use frr cliconf to run command on Free Range Routing platform
 
 ### Modules
 Name | Description
 --- | ---
-[frr.frr.frr_bgp](https://github.com/ansible-collections/frr.frr/blob/master/docs/frr.frr.frr_bgp_module.rst)|Configure global BGP settings on Free Range Routing(FRR).
-[frr.frr.frr_facts](https://github.com/ansible-collections/frr.frr/blob/master/docs/frr.frr.frr_facts_module.rst)|Collect facts from remote devices running Free Range Routing (FRR).
+[frr.frr.frr_bgp](https://github.com/ansible-collections/frr.frr/blob/main/docs/frr.frr.frr_bgp_module.rst)|Configure global BGP settings on Free Range Routing(FRR).
+[frr.frr.frr_facts](https://github.com/ansible-collections/frr.frr/blob/main/docs/frr.frr.frr_facts_module.rst)|Collect facts from remote devices running Free Range Routing (FRR).
 
 <!--end collection content-->
 
