@@ -14,3 +14,19 @@ releases:
         name: frr
         namespace: null
     release_date: '2020-06-23'
+  1.0.1:
+    changes:
+      bugfixes:
+      - Makes sure that docstring and argspec are in sync and removes sanity ignores
+        (https://github.com/ansible-collections/frr.frr/pull/23).
+      - Update docs after sanity fixes to modules.
+    fragments:
+    - remove_ignores.yaml
+    - update_docs.yaml
+    release_date: '2020-08-03'
+  1.0.2:
+    changes:
+      release_summary: Rereleased 1.0.1 with updated changelog.
+    fragments:
+    - 1.0.2.yaml
+    release_date: '2020-08-07'
