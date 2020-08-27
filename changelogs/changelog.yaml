@@ -30,3 +30,11 @@ releases:
     fragments:
     - 1.0.2.yaml
     release_date: '2020-08-07'
+  1.0.3:
+    changes:
+      minor_changes:
+      - Regenerated docs, add description to galaxy.yml and linked changelog to README
+        (https://github.com/ansible-collections/frr.frr/pull/28)
+    fragments:
+    - fixes_to_readme_and_doc.yaml
+    release_date: '2020-08-28'

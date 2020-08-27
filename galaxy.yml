@@ -8,4 +8,5 @@ name: frr
 tags: [routing, networking, facts]
 namespace: frr
 readme: README.md
+description: Ansible Collection for Free Range Routing (FRR).
 repository: https://github.com/ansible-collections/frr.frr
