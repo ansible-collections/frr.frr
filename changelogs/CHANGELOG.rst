@@ -4,6 +4,15 @@ Frr Collection Release Notes
 
 .. contents:: Topics
 
+
+v1.0.3
+======
+
+Minor Changes
+-------------
+
+- Regenerated docs, add description to galaxy.yml and linked changelog to README (https://github.com/ansible-collections/frr.frr/pull/28)
+
 v1.0.2
 ======
 
