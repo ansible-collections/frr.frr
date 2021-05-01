@@ -392,8 +392,7 @@ from ansible_collections.frr.frr.plugins.module_utils.network.frr.providers.cli.
 
 
 def main():
-    """ main entry point for module execution
-    """
+    """main entry point for module execution"""
     network_spec = {
         "prefix": dict(required=True),
         "masklen": dict(type="int", required=True),
