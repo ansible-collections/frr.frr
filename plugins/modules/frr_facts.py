@@ -356,8 +356,7 @@ VALID_SUBSETS = frozenset(FACT_SUBSETS.keys())
 
 
 def main():
-    """main entry point for module execution
-    """
+    """main entry point for module execution"""
     argument_spec = dict(
         gather_subset=dict(default=["!config"], type="list", elements="str")
     )
