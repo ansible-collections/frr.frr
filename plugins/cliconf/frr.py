@@ -66,6 +66,7 @@ class Cliconf(CliconfBase):
 
         for item in protocols:
             supported_protocols[item] = True if item in data else False
+
         return supported_protocols
 
     def get_device_info(self):
