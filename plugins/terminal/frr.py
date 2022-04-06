@@ -29,19 +29,19 @@ from ansible.plugins.terminal import TerminalBase
 class TerminalModule(TerminalBase):
 
     terminal_stdout_re = [
-        re.compile(br"[\r\n]?[\w\+\-\.:\/\[\]]+(?:\([^\)]+\)){0,3}(?:[>#]) ?$")
+        re.compile(rb"[\r\n]?[\w\+\-\.:\/\[\]]+(?:\([^\)]+\)){0,3}(?:[>#]) ?$")
     ]
 
     terminal_stderr_re = [
-        re.compile(br"% Command incomplete", re.I),
-        re.compile(br"% Unknown command", re.I),
-        re.compile(br"(?:\S+) instance is already running", re.I),
-        re.compile(br"% (?:Create|Specify) .* first", re.I),
-        re.compile(br"(?:\S+) is not running", re.I),
-        re.compile(br"% Can't find .*", re.I),
-        re.compile(br"invalid input", re.I),
-        re.compile(br"connection timed out", re.I),
-        re.compile(br"[^\r\n]+ not found"),
+        re.compile(rb"% Command incomplete", re.I),
+        re.compile(rb"% Unknown command", re.I),
+        re.compile(rb"(?:\S+) instance is already running", re.I),
+        re.compile(rb"% (?:Create|Specify) .* first", re.I),
+        re.compile(rb"(?:\S+) is not running", re.I),
+        re.compile(rb"% Can't find .*", re.I),
+        re.compile(rb"invalid input", re.I),
+        re.compile(rb"connection timed out", re.I),
+        re.compile(rb"[^\r\n]+ not found"),
     ]
 
     def on_open_shell(self):

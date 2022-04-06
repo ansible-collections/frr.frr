@@ -475,6 +475,7 @@ def main():
 
     try:
         result = module.edit_config(config_filter=" bgp")
+
     except Exception as exc:
         module.fail_json(msg=to_text(exc))
 
