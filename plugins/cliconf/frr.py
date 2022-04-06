@@ -22,8 +22,8 @@ __metaclass__ = type
 
 DOCUMENTATION = """
 ---
-author: Ansible Networking Team
-cliconf: frr
+author: Ansible Networking Team (@ansible-network)
+name: frr
 short_description: Use frr cliconf to run command on Free Range Routing platform
 description:
   - This frr plugin provides low level abstraction apis for
