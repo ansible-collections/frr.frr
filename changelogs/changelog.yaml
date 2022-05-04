@@ -38,3 +38,10 @@ releases:
     fragments:
     - fixes_to_readme_and_doc.yaml
     release_date: '2020-08-28'
+  1.0.4:
+    changes:
+      release_summary: This release includes sanity fixes that are needed for this
+        collection to be included in Ansible 6.
+    fragments:
+    - sanity_fixes.yaml
+    release_date: '2022-05-04'
