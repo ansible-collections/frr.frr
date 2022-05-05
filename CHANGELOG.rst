@@ -5,6 +5,14 @@ Frr Collection Release Notes
 .. contents:: Topics
 
 
+v1.0.4
+======
+
+Release Summary
+---------------
+
+This release includes sanity fixes that are needed for this collection to be included in Ansible 6.
+
 v1.0.3
 ======
 
