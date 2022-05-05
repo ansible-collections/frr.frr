@@ -45,3 +45,11 @@ releases:
     fragments:
     - sanity_fixes.yaml
     release_date: '2022-05-04'
+  2.0.0:
+    changes:
+      major_changes:
+      - Minimum required ansible.netcommon version is 2.5.1.
+      - Updated base plugin references to ansible.netcommon.
+    fragments:
+    - netcommon_ref_update.yaml
+    release_date: '2022-05-05'
