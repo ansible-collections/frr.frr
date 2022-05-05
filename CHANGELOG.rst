@@ -5,6 +5,15 @@ Frr Collection Release Notes
 .. contents:: Topics
 
 
+v2.0.0
+======
+
+Major Changes
+-------------
+
+- Minimum required ansible.netcommon version is 2.5.1.
+- Updated base plugin references to ansible.netcommon.
+
 v1.0.4
 ======
 
