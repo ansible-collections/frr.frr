@@ -1,0 +1,2 @@
+plugins/cliconf/frr.py pylint:arguments-renamed
+tests/unit/mock/loader.py pylint:arguments-renamed
