@@ -5,10 +5,11 @@
 
 from __future__ import absolute_import, division, print_function
 
+
 __metaclass__ = type
 
-import os
 import json
+import os
 
 from ansible_collections.frr.frr.tests.unit.modules.utils import (
     AnsibleExitJson,
@@ -48,7 +49,6 @@ class TestFrrModule(ModuleTestCase):
         sort=True,
         defaults=False,
     ):
-
         self.load_fixtures(commands)
 
         if failed:

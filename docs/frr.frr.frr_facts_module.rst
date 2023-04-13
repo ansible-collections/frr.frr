@@ -68,7 +68,7 @@ Notes
 Examples
 --------
 
-.. code-block:: yaml+jinja
+.. code-block:: yaml
 
     - name: Collect all facts from the device
       frr.frr.frr_facts:

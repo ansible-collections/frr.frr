@@ -6,6 +6,7 @@
 
 from __future__ import absolute_import, division, print_function
 
+
 __metaclass__ = type
 
 
@@ -115,16 +116,16 @@ ansible_net_mpls_ldp_neighbors:
 import platform
 import re
 
-from ansible_collections.frr.frr.plugins.module_utils.network.frr.frr import (
-    run_commands,
-    get_capabilities,
-)
 from ansible.module_utils.basic import AnsibleModule
 from ansible.module_utils.six import iteritems
 
+from ansible_collections.frr.frr.plugins.module_utils.network.frr.frr import (
+    get_capabilities,
+    run_commands,
+)
+
 
 class FactsBase(object):
-
     COMMANDS = list()
 
     def __init__(self, module):
@@ -148,7 +149,6 @@ class FactsBase(object):
 
 
 class Default(FactsBase):
-
     COMMANDS = ["show version"]
 
     def populate(self):
@@ -175,7 +175,6 @@ class Default(FactsBase):
 
 
 class Hardware(FactsBase):
-
     COMMANDS = ["show memory"]
 
     def _parse_daemons(self, data):
@@ -214,7 +213,6 @@ class Hardware(FactsBase):
 
 
 class Config(FactsBase):
-
     COMMANDS = ["show running-config"]
 
     def populate(self):
@@ -231,7 +229,6 @@ class Config(FactsBase):
 
 
 class Interfaces(FactsBase):
-
     COMMANDS = ["show interface"]
 
     def populate(self):
@@ -372,7 +369,7 @@ def main():
 
         if subset not in VALID_SUBSETS:
             module.fail_json(
-                msg="Subset must be one of [%s], got %s" % (", ".join(VALID_SUBSETS), subset)
+                msg="Subset must be one of [%s], got %s" % (", ".join(VALID_SUBSETS), subset),
             )
 
         if exclude:

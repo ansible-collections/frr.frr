@@ -5,27 +5,26 @@
 
 from __future__ import absolute_import, division, print_function
 
+
 __metaclass__ = type
 
 
 import re
 
 from ansible.module_utils.six import iteritems
-from ansible_collections.ansible.netcommon.plugins.module_utils.network.common.utils import (
-    to_list,
-)
-from ansible_collections.frr.frr.plugins.module_utils.network.frr.providers.providers import (
-    register_provider,
-)
-from ansible_collections.frr.frr.plugins.module_utils.network.frr.providers.providers import (
-    CliProvider,
+from ansible_collections.ansible.netcommon.plugins.module_utils.network.common.utils import to_list
+
+from ansible_collections.frr.frr.plugins.module_utils.network.frr.providers.cli.config.bgp.address_family import (
+    AddressFamily,
 )
 from ansible_collections.frr.frr.plugins.module_utils.network.frr.providers.cli.config.bgp.neighbors import (
     Neighbors,
 )
-from ansible_collections.frr.frr.plugins.module_utils.network.frr.providers.cli.config.bgp.address_family import (
-    AddressFamily,
+from ansible_collections.frr.frr.plugins.module_utils.network.frr.providers.providers import (
+    CliProvider,
+    register_provider,
 )
+
 
 REDISTRIBUTE_PROTOCOLS = [
     "ospf",
@@ -158,9 +157,9 @@ class Provider(CliProvider):
                     if item["networks"]:
                         raise ValueError(
                             "operation is replace but provided both root level networks and networks under %s %s address family"
-                            % (item["afi"], item["safi"])
+                            % (item["afi"], item["safi"]),
                         )
             if config and device_has_AF(config):
                 raise ValueError(
-                    "operation is replace and device has one or more address family activated but root level network(s) provided"
+                    "operation is replace and device has one or more address family activated but root level network(s) provided",
                 )
