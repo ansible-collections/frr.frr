@@ -131,9 +131,7 @@ class Neighbors(CliProvider):
             if not config or cmd not in config:
                 return cmd
         else:
-            raise ValueError(
-                "required both options for timers: keepalive and holdtime"
-            )
+            raise ValueError("required both options for timers: keepalive and holdtime")
 
 
 class AFNeighbors(CliProvider):

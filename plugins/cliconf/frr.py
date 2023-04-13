@@ -132,9 +132,7 @@ class Cliconf(CliconfBase):
         option_values = self.get_option_values()
 
         if candidate is None and device_operations["supports_generate_diff"]:
-            raise ValueError(
-                "candidate configuration is required to generate diff"
-            )
+            raise ValueError("candidate configuration is required to generate diff")
 
         if diff_match not in option_values["diff_match"]:
             raise ValueError(
@@ -154,9 +152,7 @@ class Cliconf(CliconfBase):
 
         if running and diff_match != "none":
             # running configuration
-            running_obj = NetworkConfig(
-                indent=1, contents=running, ignore_lines=diff_ignore_lines
-            )
+            running_obj = NetworkConfig(indent=1, contents=running, ignore_lines=diff_ignore_lines)
             configdiffobjs = candidate_obj.difference(
                 running_obj, path=path, match=diff_match, replace=diff_replace
             )
@@ -164,22 +160,16 @@ class Cliconf(CliconfBase):
         else:
             configdiffobjs = candidate_obj.items
 
-        diff["config_diff"] = (
-            dumps(configdiffobjs, "commands") if configdiffobjs else ""
-        )
+        diff["config_diff"] = dumps(configdiffobjs, "commands") if configdiffobjs else ""
         return diff
 
     @enable_mode
     def get_config(self, source="running", flags=None, format=None):
         if source not in ("running", "startup"):
-            raise ValueError(
-                "fetching configuration from %s is not supported" % source
-            )
+            raise ValueError("fetching configuration from %s is not supported" % source)
 
         if format:
-            raise ValueError(
-                "'format' value %s is not supported for get_config" % format
-            )
+            raise ValueError("'format' value %s is not supported for get_config" % format)
 
         if not flags:
             flags = []
@@ -194,14 +184,10 @@ class Cliconf(CliconfBase):
         return self.send_command(cmd)
 
     @enable_mode
-    def edit_config(
-        self, candidate=None, commit=True, replace=None, comment=None
-    ):
+    def edit_config(self, candidate=None, commit=True, replace=None, comment=None):
         resp = {}
         operations = self.get_device_operations()
-        self.check_edit_config_capability(
-            operations, candidate, commit, replace, comment
-        )
+        self.check_edit_config_capability(operations, candidate, commit, replace, comment)
 
         results = []
         requests = []
@@ -237,9 +223,7 @@ class Cliconf(CliconfBase):
         if not command:
             raise ValueError("must provide value of command to execute")
         if output:
-            raise ValueError(
-                "'output' value %s is not supported for get" % output
-            )
+            raise ValueError("'output' value %s is not supported for get" % output)
 
         return self.send_command(
             command=command,
@@ -261,10 +245,7 @@ class Cliconf(CliconfBase):
 
             output = cmd.pop("output", None)
             if output:
-                raise ValueError(
-                    "'output' value %s is not supported for run_commands"
-                    % output
-                )
+                raise ValueError("'output' value %s is not supported for run_commands" % output)
 
             try:
                 out = self.send_command(**cmd)

@@ -131,7 +131,7 @@ options:
           masklen:
             description:
             - Subnet mask length for the network to announce(e.g, 8, 16, 24, etc.).
-            required: True
+            required: true
             type: int
           route_map:
             description:
@@ -214,7 +214,7 @@ options:
               masklen:
                 description:
                 - Subnet mask length for the network to announce(e.g, 8, 16, 24, etc.).
-                required: True
+                required: true
                 type: int
               route_map:
                 description:
@@ -335,11 +335,11 @@ EXAMPLES = """
         safi: multicast
         neighbors:
         - neighbor: 203.0.113.10
-          activate: yes
+          activate: true
           maximum_prefix: 250
 
         - neighbor: 192.0.2.15
-          activate: yes
+          activate: true
           route_reflector_client: true
     operation: merge
 
@@ -443,12 +443,8 @@ def main():
             default="unicast",
         ),
         "networks": dict(type="list", elements="dict", options=network_spec),
-        "redistribute": dict(
-            type="list", elements="dict", options=redistribute_spec
-        ),
-        "neighbors": dict(
-            type="list", elements="dict", options=af_neighbor_spec
-        ),
+        "redistribute": dict(type="list", elements="dict", options=redistribute_spec),
+        "neighbors": dict(type="list", elements="dict", options=af_neighbor_spec),
     }
 
     config_spec = {
@@ -456,22 +452,16 @@ def main():
         "router_id": dict(),
         "log_neighbor_changes": dict(type="bool"),
         "neighbors": dict(type="list", elements="dict", options=neighbor_spec),
-        "address_family": dict(
-            type="list", elements="dict", options=address_family_spec
-        ),
+        "address_family": dict(type="list", elements="dict", options=address_family_spec),
         "networks": dict(type="list", elements="dict", options=network_spec),
     }
 
     argument_spec = {
         "config": dict(type="dict", options=config_spec),
-        "operation": dict(
-            default="merge", choices=["merge", "replace", "override", "delete"]
-        ),
+        "operation": dict(default="merge", choices=["merge", "replace", "override", "delete"]),
     }
 
-    module = NetworkModule(
-        argument_spec=argument_spec, supports_check_mode=True
-    )
+    module = NetworkModule(argument_spec=argument_spec, supports_check_mode=True)
 
     try:
         result = module.edit_config(config_filter=" bgp")

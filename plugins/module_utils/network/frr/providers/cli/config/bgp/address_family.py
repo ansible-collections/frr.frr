@@ -36,9 +36,7 @@ class AddressFamily(CliProvider):
 
             if config:
                 context_path = [router_context, context]
-                context_config = self.get_config_context(
-                    config, context_path, indent=1
-                )
+                context_config = self.get_config_context(config, context_path, indent=1)
 
             for key, value in iteritems(item):
                 if value is not None:
@@ -135,9 +133,7 @@ class AddressFamily(CliProvider):
 
         if self.params["operation"] == "replace":
             if config:
-                matches = re.findall(
-                    r"redistribute (\S+)(?:\s*)(\d*)", config, re.M
-                )
+                matches = re.findall(r"redistribute (\S+)(?:\s*)(\d*)", config, re.M)
                 for i in range(0, len(matches)):
                     matches[i] = " ".join(matches[i]).strip()
                 for entry in set(matches).difference(safe_list):
@@ -147,6 +143,4 @@ class AddressFamily(CliProvider):
 
     def _render_neighbors(self, item, config):
         """generate bgp neighbor configuration"""
-        return AFNeighbors(self.params).render(
-            config, nbr_list=item["neighbors"]
-        )
+        return AFNeighbors(self.params).render(config, nbr_list=item["neighbors"])
