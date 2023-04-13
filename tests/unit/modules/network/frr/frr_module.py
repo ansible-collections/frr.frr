@@ -66,9 +66,7 @@ class TestFrrModule(ModuleTestCase):
                     result["commands"],
                 )
             else:
-                self.assertEqual(
-                    commands, result["commands"], result["commands"]
-                )
+                self.assertEqual(commands, result["commands"], result["commands"])
 
         return result
 

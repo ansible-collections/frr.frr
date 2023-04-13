@@ -134,9 +134,7 @@ class FactsBase(object):
         self._capabilities = get_capabilities(self.module)
 
     def populate(self):
-        self.responses = run_commands(
-            self.module, commands=self.COMMANDS, check_rc=False
-        )
+        self.responses = run_commands(self.module, commands=self.COMMANDS, check_rc=False)
 
     def run(self, cmd):
         return run_commands(commands=cmd, check_rc=False)
@@ -257,9 +255,7 @@ class Interfaces(FactsBase):
         if ldp_supported:
             data = self.responses[1]
             if data:
-                self.facts[
-                    "mpls_ldp_neighbors"
-                ] = self.populate_mpls_ldp_neighbors(data)
+                self.facts["mpls_ldp_neighbors"] = self.populate_mpls_ldp_neighbors(data)
 
     def parse_interfaces(self, data):
         parsed = dict()
@@ -300,12 +296,8 @@ class Interfaces(FactsBase):
         for key, value in data.items():
             self.facts["interfaces"][key]["ipv4"] = list()
             primary_address = addresses = []
-            primary_address = re.findall(
-                r"inet (\S+) broadcast (?:\S+)(?:\s{2,})", value, re.M
-            )
-            addresses = re.findall(
-                r"inet (\S+) broadcast (?:\S+)(?:\s+)secondary", value, re.M
-            )
+            primary_address = re.findall(r"inet (\S+) broadcast (?:\S+)(?:\s{2,})", value, re.M)
+            addresses = re.findall(r"inet (\S+) broadcast (?:\S+)(?:\s+)secondary", value, re.M)
             if len(primary_address) == 0:
                 continue
             addresses.append(primary_address[0])
@@ -348,22 +340,16 @@ class Interfaces(FactsBase):
         return facts
 
 
-FACT_SUBSETS = dict(
-    default=Default, hardware=Hardware, config=Config, interfaces=Interfaces
-)
+FACT_SUBSETS = dict(default=Default, hardware=Hardware, config=Config, interfaces=Interfaces)
 
 VALID_SUBSETS = frozenset(FACT_SUBSETS.keys())
 
 
 def main():
     """main entry point for module execution"""
-    argument_spec = dict(
-        gather_subset=dict(default=["!config"], type="list", elements="str")
-    )
+    argument_spec = dict(gather_subset=dict(default=["!config"], type="list", elements="str"))
 
-    module = AnsibleModule(
-        argument_spec=argument_spec, supports_check_mode=True
-    )
+    module = AnsibleModule(argument_spec=argument_spec, supports_check_mode=True)
 
     gather_subset = module.params["gather_subset"]
 
@@ -386,8 +372,7 @@ def main():
 
         if subset not in VALID_SUBSETS:
             module.fail_json(
-                msg="Subset must be one of [%s], got %s"
-                % (", ".join(VALID_SUBSETS), subset)
+                msg="Subset must be one of [%s], got %s" % (", ".join(VALID_SUBSETS), subset)
             )
 
         if exclude:

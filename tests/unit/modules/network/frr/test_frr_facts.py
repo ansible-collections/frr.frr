@@ -58,9 +58,7 @@ class TestFrrFactsModule(TestFrrModule):
     def test_frr_facts_default(self):
         set_module_args(dict(gather_subset="default"))
         result = self.execute_module()
-        self.assertEqual(
-            result["ansible_facts"]["ansible_net_hostname"], "rtr1"
-        )
+        self.assertEqual(result["ansible_facts"]["ansible_net_hostname"], "rtr1")
         self.assertEqual(result["ansible_facts"]["ansible_net_version"], "6.0")
         self.assertEqual(result["ansible_facts"]["ansible_net_system"], "frr")
 
@@ -68,15 +66,11 @@ class TestFrrFactsModule(TestFrrModule):
         set_module_args(dict(gather_subset="interfaces"))
         result = self.execute_module()
         self.assertEqual(
-            result["ansible_facts"]["ansible_net_interfaces"]["eth0"][
-                "macaddress"
-            ],
+            result["ansible_facts"]["ansible_net_interfaces"]["eth0"]["macaddress"],
             "fa:16:3e:d4:32:b2",
         )
         self.assertEqual(
-            result["ansible_facts"]["ansible_net_interfaces"]["eth1"][
-                "macaddress"
-            ],
+            result["ansible_facts"]["ansible_net_interfaces"]["eth1"]["macaddress"],
             "fa:16:3e:95:88:f7",
         )
         self.assertEqual(
@@ -89,9 +83,7 @@ class TestFrrFactsModule(TestFrrModule):
         )
         self.assertEqual(
             sorted(result["ansible_facts"]["ansible_net_all_ipv4_addresses"]),
-            sorted(
-                ["192.168.1.19", "192.168.1.18", "192.168.1.21", "192.168.1.8"]
-            ),
+            sorted(["192.168.1.19", "192.168.1.18", "192.168.1.21", "192.168.1.8"]),
         )
         self.assertEqual(
             sorted(result["ansible_facts"]["ansible_net_all_ipv6_addresses"]),
@@ -110,29 +102,21 @@ class TestFrrFactsModule(TestFrrModule):
         result = self.execute_module()
 
         self.assertEqual(
-            result["ansible_facts"]["ansible_net_mem_stats"]["zebra"][
-                "total_heap_allocated"
-            ],
+            result["ansible_facts"]["ansible_net_mem_stats"]["zebra"]["total_heap_allocated"],
             "4200 KiB",
         )
 
         self.assertEqual(
-            result["ansible_facts"]["ansible_net_mem_stats"]["ripd"][
-                "total_heap_allocated"
-            ],
+            result["ansible_facts"]["ansible_net_mem_stats"]["ripd"]["total_heap_allocated"],
             "936 KiB",
         )
 
         self.assertEqual(
-            result["ansible_facts"]["ansible_net_mem_stats"]["ripd"][
-                "used_ordinary_blocks"
-            ],
+            result["ansible_facts"]["ansible_net_mem_stats"]["ripd"]["used_ordinary_blocks"],
             "901 KiB",
         )
 
         self.assertEqual(
-            result["ansible_facts"]["ansible_net_mem_stats"]["ripd"][
-                "holding_block_headers"
-            ],
+            result["ansible_facts"]["ansible_net_mem_stats"]["ripd"]["holding_block_headers"],
             "0 bytes",
         )
