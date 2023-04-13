@@ -131,7 +131,7 @@ options:
           masklen:
             description:
             - Subnet mask length for the network to announce(e.g, 8, 16, 24, etc.).
-            required: True
+            required: true
             type: int
           route_map:
             description:
@@ -214,7 +214,7 @@ options:
               masklen:
                 description:
                 - Subnet mask length for the network to announce(e.g, 8, 16, 24, etc.).
-                required: True
+                required: true
                 type: int
               route_map:
                 description:
@@ -335,11 +335,11 @@ EXAMPLES = """
         safi: multicast
         neighbors:
         - neighbor: 203.0.113.10
-          activate: yes
+          activate: true
           maximum_prefix: 250
 
         - neighbor: 192.0.2.15
-          activate: yes
+          activate: true
           route_reflector_client: true
     operation: merge
 
