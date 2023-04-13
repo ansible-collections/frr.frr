@@ -34,9 +34,7 @@ class TestFrrBgpModule(TestFrrModule):
             )
         )
         commands = obj.render(self._bgp_config)
-        self.assertEqual(
-            commands, ["router bgp 64496", "bgp router-id 192.0.2.2", "exit"]
-        )
+        self.assertEqual(commands, ["router bgp 64496", "bgp router-id 192.0.2.2", "exit"])
 
     def test_frr_bgp_idempotent(self):
         obj = Provider(
@@ -111,11 +109,7 @@ class TestFrrBgpModule(TestFrrModule):
             params=dict(
                 config=dict(
                     bgp_as=64496,
-                    networks=[
-                        dict(
-                            prefix="192.0.2.0", masklen=24, route_map="RMAP_1"
-                        )
-                    ],
+                    networks=[dict(prefix="192.0.2.0", masklen=24, route_map="RMAP_1")],
                     address_family=None,
                 ),
                 operation="merge",
@@ -139,9 +133,7 @@ class TestFrrBgpModule(TestFrrModule):
                 config=dict(
                     bgp_as=64496,
                     networks=[
-                        dict(
-                            prefix="192.0.1.0", masklen=24, route_map="RMAP_1"
-                        ),
+                        dict(prefix="192.0.1.0", masklen=24, route_map="RMAP_1"),
                         dict(
                             prefix="198.51.100.0",
                             masklen=24,
@@ -161,9 +153,7 @@ class TestFrrBgpModule(TestFrrModule):
 
         config = dict(
             bgp_as=64496,
-            address_family=[
-                dict(afi="ipv4", safi="unicast", redistribute=[rd_1])
-            ],
+            address_family=[dict(afi="ipv4", safi="unicast", redistribute=[rd_1])],
             networks=None,
         )
 
@@ -185,9 +175,7 @@ class TestFrrBgpModule(TestFrrModule):
 
         config = dict(
             bgp_as=64496,
-            address_family=[
-                dict(afi="ipv4", safi="unicast", redistribute=[rd_1, rd_2])
-            ],
+            address_family=[dict(afi="ipv4", safi="unicast", redistribute=[rd_1, rd_2])],
             networks=None,
         )
 
@@ -197,12 +185,8 @@ class TestFrrBgpModule(TestFrrModule):
         self.assertEqual(commands, [])
 
     def test_frr_bgp_address_family_neighbors(self):
-        af_nbr_1 = dict(
-            neighbor="192.51.100.1", maximum_prefix=35, activate=True
-        )
-        af_nbr_2 = dict(
-            neighbor="192.51.100.3", route_reflector_client=True, activate=True
-        )
+        af_nbr_1 = dict(neighbor="192.51.100.1", maximum_prefix=35, activate=True)
+        af_nbr_2 = dict(neighbor="192.51.100.3", route_reflector_client=True, activate=True)
 
         config = dict(
             bgp_as=64496,
@@ -232,15 +216,11 @@ class TestFrrBgpModule(TestFrrModule):
         self.assertEqual(sorted(commands), sorted(cmd))
 
     def test_frr_bgp_address_family_neighbors_idempotent(self):
-        af_nbr_1 = dict(
-            neighbor="2.2.2.2", remove_private_as=True, maximum_prefix=100
-        )
+        af_nbr_1 = dict(neighbor="2.2.2.2", remove_private_as=True, maximum_prefix=100)
 
         config = dict(
             bgp_as=64496,
-            address_family=[
-                dict(afi="ipv4", safi="unicast", neighbors=[af_nbr_1])
-            ],
+            address_family=[dict(afi="ipv4", safi="unicast", neighbors=[af_nbr_1])],
             networks=None,
         )
 
@@ -255,9 +235,7 @@ class TestFrrBgpModule(TestFrrModule):
 
         config = dict(
             bgp_as=64496,
-            address_family=[
-                dict(afi="ipv4", safi="multicast", networks=[net, net2])
-            ],
+            address_family=[dict(afi="ipv4", safi="multicast", networks=[net, net2])],
             networks=None,
         )
 
@@ -280,9 +258,7 @@ class TestFrrBgpModule(TestFrrModule):
 
         config = dict(
             bgp_as=64496,
-            address_family=[
-                dict(afi="ipv4", safi="multicast", networks=[net, net2])
-            ],
+            address_family=[dict(afi="ipv4", safi="multicast", networks=[net, net2])],
             networks=None,
         )
 

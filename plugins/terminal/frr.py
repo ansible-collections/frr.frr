@@ -30,9 +30,7 @@ from ansible_collections.ansible.netcommon.plugins.plugin_utils.terminal_base im
 
 class TerminalModule(TerminalBase):
 
-    terminal_stdout_re = [
-        re.compile(rb"[\r\n]?[\w\+\-\.:\/\[\]]+(?:\([^\)]+\)){0,3}(?:[>#]) ?$")
-    ]
+    terminal_stdout_re = [re.compile(rb"[\r\n]?[\w\+\-\.:\/\[\]]+(?:\([^\)]+\)){0,3}(?:[>#]) ?$")]
 
     terminal_stderr_re = [
         re.compile(rb"% Command incomplete", re.I),
