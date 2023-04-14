@@ -59,4 +59,4 @@ releases:
       release_summary: This release includes README update and assorted sanity fixes.
     fragments:
       - gha_sanity_fix.yml
-    release_date: '2023-04-14'
+    release_date: "2023-04-14"
