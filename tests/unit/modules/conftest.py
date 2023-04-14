@@ -3,15 +3,16 @@
 
 from __future__ import absolute_import, division, print_function
 
+
 __metaclass__ = type
 
 import json
 
 import pytest
 
-from ansible.module_utils.six import string_types
 from ansible.module_utils._text import to_bytes
 from ansible.module_utils.common._collections_compat import MutableMapping
+from ansible.module_utils.six import string_types
 
 
 @pytest.fixture

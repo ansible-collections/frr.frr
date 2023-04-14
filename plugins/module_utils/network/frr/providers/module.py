@@ -5,18 +5,17 @@
 
 from __future__ import absolute_import, division, print_function
 
+
 __metaclass__ = type
 
+from ansible.module_utils._text import to_text
 from ansible.module_utils.basic import AnsibleModule
 from ansible.module_utils.connection import Connection
-from ansible_collections.frr.frr.plugins.module_utils.network.frr.providers import (
-    providers,
-)
-from ansible.module_utils._text import to_text
+
+from ansible_collections.frr.frr.plugins.module_utils.network.frr.providers import providers
 
 
 class NetworkModule(AnsibleModule):
-
     fail_on_missing_provider = True
 
     def __init__(self, connection=None, *args, **kwargs):

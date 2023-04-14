@@ -3,29 +3,28 @@
 
 from __future__ import absolute_import, division, print_function
 
+
 __metaclass__ = type
 
-from ansible_collections.frr.frr.tests.unit.compat.mock import patch
 from ansible_collections.frr.frr.plugins.modules import frr_facts
-from ansible_collections.frr.frr.tests.unit.modules.utils import (
-    set_module_args,
-)
+from ansible_collections.frr.frr.tests.unit.compat.mock import patch
+from ansible_collections.frr.frr.tests.unit.modules.utils import set_module_args
+
 from .frr_module import TestFrrModule, load_fixture
 
 
 class TestFrrFactsModule(TestFrrModule):
-
     module = frr_facts
 
     def setUp(self):
         super(TestFrrFactsModule, self).setUp()
         self.mock_run_commands = patch(
-            "ansible_collections.frr.frr.plugins.modules.frr_facts.run_commands"
+            "ansible_collections.frr.frr.plugins.modules.frr_facts.run_commands",
         )
         self.run_commands = self.mock_run_commands.start()
 
         self.mock_get_capabilities = patch(
-            "ansible_collections.frr.frr.plugins.modules.frr_facts.get_capabilities"
+            "ansible_collections.frr.frr.plugins.modules.frr_facts.get_capabilities",
         )
         self.get_capabilities = self.mock_get_capabilities.start()
         self.get_capabilities.return_value = {
@@ -93,7 +92,7 @@ class TestFrrFactsModule(TestFrrModule):
                     "3ffe:506::1",
                     "3ffe:504::1",
                     "fe80::f816:3eff:fed4:32b2",
-                ]
+                ],
             ),
         )
 
