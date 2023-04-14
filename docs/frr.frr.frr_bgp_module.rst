@@ -899,7 +899,7 @@ Notes
 Examples
 --------
 
-.. code-block:: yaml+jinja
+.. code-block:: yaml
 
     - name: configure global bgp as 64496
       frr.frr.frr_bgp:
@@ -957,11 +957,11 @@ Examples
             safi: multicast
             neighbors:
             - neighbor: 203.0.113.10
-              activate: yes
+              activate: true
               maximum_prefix: 250
 
             - neighbor: 192.0.2.15
-              activate: yes
+              activate: true
               route_reflector_client: true
         operation: merge
 

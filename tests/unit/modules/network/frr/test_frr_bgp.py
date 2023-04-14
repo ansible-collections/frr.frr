@@ -5,12 +5,14 @@
 
 from __future__ import absolute_import, division, print_function
 
+
 __metaclass__ = type
 
 from ansible_collections.frr.frr.plugins.module_utils.network.frr.providers.cli.config.bgp.process import (
     Provider,
 )
 from ansible_collections.frr.frr.plugins.modules import frr_bgp
+
 from .frr_module import TestFrrModule, load_fixture
 
 
@@ -31,7 +33,7 @@ class TestFrrBgpModule(TestFrrModule):
                     address_family=None,
                 ),
                 operation="merge",
-            )
+            ),
         )
         commands = obj.render(self._bgp_config)
         self.assertEqual(commands, ["router bgp 64496", "bgp router-id 192.0.2.2", "exit"])
@@ -46,7 +48,7 @@ class TestFrrBgpModule(TestFrrModule):
                     address_family=None,
                 ),
                 operation="merge",
-            )
+            ),
         )
         commands = obj.render(self._bgp_config)
         self.assertEqual(commands, [])
@@ -56,7 +58,7 @@ class TestFrrBgpModule(TestFrrModule):
             params=dict(
                 config=dict(bgp_as=64496, networks=None, address_family=None),
                 operation="delete",
-            )
+            ),
         )
         commands = obj.render(self._bgp_config)
         self.assertEqual(commands, ["no router bgp 64496"])
@@ -71,7 +73,7 @@ class TestFrrBgpModule(TestFrrModule):
                     address_family=None,
                 ),
                 operation="merge",
-            )
+            ),
         )
         commands = obj.render(self._bgp_config)
         self.assertEqual(
@@ -93,13 +95,13 @@ class TestFrrBgpModule(TestFrrModule):
                             neighbor="192.51.100.1",
                             remote_as=64496,
                             timers=dict(keepalive=120, holdtime=360),
-                        )
+                        ),
                     ],
                     networks=None,
                     address_family=None,
                 ),
                 operation="merge",
-            )
+            ),
         )
         commands = obj.render(self._bgp_config)
         self.assertEqual(commands, [])
@@ -113,7 +115,7 @@ class TestFrrBgpModule(TestFrrModule):
                     address_family=None,
                 ),
                 operation="merge",
-            )
+            ),
         )
         commands = obj.render(self._bgp_config)
         self.assertEqual(
@@ -123,7 +125,7 @@ class TestFrrBgpModule(TestFrrModule):
                     "router bgp 64496",
                     "network 192.0.2.0/24 route-map RMAP_1",
                     "exit",
-                ]
+                ],
             ),
         )
 
@@ -143,7 +145,7 @@ class TestFrrBgpModule(TestFrrModule):
                     address_family=None,
                 ),
                 operation="merge",
-            )
+            ),
         )
         commands = obj.render(self._bgp_config)
         self.assertEqual(commands, [])
@@ -195,7 +197,7 @@ class TestFrrBgpModule(TestFrrModule):
                     afi="ipv4",
                     safi="multicast",
                     neighbors=[af_nbr_1, af_nbr_2],
-                )
+                ),
             ],
             networks=None,
         )
