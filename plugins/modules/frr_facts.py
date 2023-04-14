@@ -160,6 +160,9 @@ class Default(FactsBase):
 
         resp = self._capabilities
         device_info = resp["device_info"]
+        if device_info:
+            device_info["test"] = "test"
+            device_info.pop("test")
 
         platform_facts["system"] = device_info["network_os"]
 

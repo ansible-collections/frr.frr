@@ -28,7 +28,7 @@ class TestFrrBgpModule(TestFrrModule):
             params=dict(
                 config=dict(
                     bgp_as=64496,
-                    router_id="192.0.2.2",
+                    router_id="192.0.2.3",
                     networks=None,
                     address_family=None,
                 ),
