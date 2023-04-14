@@ -1,8 +1,8 @@
 
 
 # Free Range Routing (FRR) Collection
-[![CI](https://zuul-ci.org/gated.svg)](https://dashboard.zuul.ansible.com/t/ansible/project/github.com/ansible-collections/frr.frr) <!--[![Codecov](https://img.shields.io/codecov/c/github/ansible-collections/vyos)](https://codecov.io/gh/ansible-collections/frr.frr)-->
-[![Codecov](https://codecov.io/gh/ansible-collections/cisco.nxos/branch/main/graph/badge.svg)](https://codecov.io/gh/ansible-collections/cisco.nxos)
+[![CI](https://zuul-ci.org/gated.svg)](https://dashboard.zuul.ansible.com/t/ansible/project/github.com/ansible-collections/frr.frr) 
+[![Codecov](https://codecov.io/gh/ansible-collections/frr.frr/branch/main/graph/badge.svg)](https://codecov.io/gh/ansible-collections/frr.frr)
 
 
 The Ansible FRR collection includes a variety of Ansible content to help automate the management of FRR network appliances.
