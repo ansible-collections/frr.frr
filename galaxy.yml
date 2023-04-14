@@ -11,4 +11,4 @@ readme: README.md
 description: Ansible Collection for Free Range Routing (FRR).
 repository: https://github.com/ansible-collections/frr.frr
 issues: https://github.com/ansible-collections/frr.frr/issues
-version: "2.0.0"
+version: "2.0.1-dev"
