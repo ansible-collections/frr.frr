@@ -1,7 +1,7 @@
 
 
 # Free Range Routing (FRR) Collection
-[![CI](https://zuul-ci.org/gated.svg)](https://dashboard.zuul.ansible.com/t/ansible/project/github.com/ansible-collections/frr.frr) 
+[![CI](https://zuul-ci.org/gated.svg)](https://dashboard.zuul.ansible.com/t/ansible/project/github.com/ansible-collections/frr.frr)
 [![Codecov](https://codecov.io/gh/ansible-collections/frr.frr/branch/main/graph/badge.svg)](https://codecov.io/gh/ansible-collections/frr.frr)
 
 
