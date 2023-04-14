@@ -54,3 +54,9 @@ releases:
     fragments:
       - netcommon_ref_update.yaml
     release_date: "2022-05-05"
+  2.0.2:
+    changes:
+      release_summary: This release includes README update and assorted sanity fixes.
+    fragments:
+      - gha_sanity_fix.yml
+    release_date: "2023-04-14"
