@@ -5,6 +5,14 @@ Frr Collection Release Notes
 .. contents:: Topics
 
 
+v2.0.2
+======
+
+Release Summary
+---------------
+
+This release includes README update and assorted sanity fixes.
+
 v2.0.0
 ======
 
