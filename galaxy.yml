@@ -5,9 +5,10 @@ dependencies:
   "ansible.netcommon": ">=2.5.1"
 license_file: LICENSE
 name: frr
-tags: [routing, networking, facts]
+tags: [routing, networking, facts, frr]
 namespace: frr
 readme: README.md
 description: Ansible Collection for Free Range Routing (FRR).
 repository: https://github.com/ansible-collections/frr.frr
 issues: https://github.com/ansible-collections/frr.frr/issues
+version: "2.0.0"
