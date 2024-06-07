@@ -6,8 +6,9 @@ from __future__ import absolute_import, division, print_function
 
 __metaclass__ = type
 
+from unittest.mock import patch
+
 from ansible_collections.frr.frr.plugins.modules import frr_facts
-from ansible_collections.frr.frr.tests.unit.compat.mock import patch
 from ansible_collections.frr.frr.tests.unit.modules.utils import set_module_args
 
 from .frr_module import TestFrrModule, load_fixture
