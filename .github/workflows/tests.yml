@@ -14,17 +14,12 @@ on:  # yamllint disable-line rule:truthy
 
 jobs:
   changelog:
-<<<<<<< HEAD
-    uses: ansible-network/github_actions/.github/workflows/changelog.yml@main
-    if: github.event_name != 'schedule'
-=======
     uses: ansible/ansible-content-actions/.github/workflows/changelog.yaml@main
     if: github.event_name == 'pull_request'
   build-import:
     uses: ansible/ansible-content-actions/.github/workflows/build_import.yaml@main
   ansible-lint:
     uses: ansible/ansible-content-actions/.github/workflows/ansible_lint.yaml@main
->>>>>>> 98f1e1f (Bump min ansible-core to 2.15.0)
   sanity:
     uses: ansible/ansible-content-actions/.github/workflows/sanity.yaml@main
   unit-galaxy:
