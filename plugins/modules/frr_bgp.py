@@ -16,150 +16,150 @@ module: frr_bgp
 author: Nilashish Chakraborty (@NilashishC)
 short_description: Configure global BGP settings on Free Range Routing(FRR).
 description:
-- This module provides configuration management of global BGP parameters on devices
-  running Free Range Routing(FRR).
+  - This module provides configuration management of global BGP parameters on devices
+    running Free Range Routing(FRR).
 version_added: 1.0.0
 notes:
-- Tested against FRRouting 6.0.
+  - Tested against FRRouting 6.0.
 options:
   config:
     description:
-    - Specifies the BGP related configuration.
+      - Specifies the BGP related configuration.
     type: dict
     suboptions:
       bgp_as:
         description:
-        - Specifies the BGP Autonomous System (AS) number to configure on the device.
+          - Specifies the BGP Autonomous System (AS) number to configure on the device.
         type: int
         required: true
       router_id:
         description:
-        - Configures the BGP routing process router-id value.
+          - Configures the BGP routing process router-id value.
         type: str
       log_neighbor_changes:
         description:
-        - Enable/disable logging neighbor up/down and reset reason.
+          - Enable/disable logging neighbor up/down and reset reason.
         type: bool
       neighbors:
         description:
-        - Specifies BGP neighbor related configurations.
+          - Specifies BGP neighbor related configurations.
         type: list
         elements: dict
         suboptions:
           neighbor:
             description:
-            - Neighbor router address.
+              - Neighbor router address.
             required: true
             type: str
           remote_as:
             description:
-            - Remote AS of the BGP neighbor to configure.
+              - Remote AS of the BGP neighbor to configure.
             type: int
             required: true
           update_source:
             description:
-            - Source of the routing updates.
+              - Source of the routing updates.
             type: str
           password:
             description:
-            - Password to authenticate the BGP peer connection.
+              - Password to authenticate the BGP peer connection.
             type: str
           enabled:
             description:
-            - Administratively shutdown or enable a neighbor.
+              - Administratively shutdown or enable a neighbor.
             type: bool
           description:
             description:
-            - Neighbor specific description.
+              - Neighbor specific description.
             type: str
           ebgp_multihop:
             description:
-            - Specifies the maximum hop count for EBGP neighbors not on directly connected
-              networks.
-            - The range is from 1 to 255.
+              - Specifies the maximum hop count for EBGP neighbors not on directly connected
+                networks.
+              - The range is from 1 to 255.
             type: int
           peer_group:
             description:
-            - Name of the peer group that the neighbor is a member of.
+              - Name of the peer group that the neighbor is a member of.
             type: str
           timers:
             description:
-            - Specifies BGP neighbor timer related configurations.
+              - Specifies BGP neighbor timer related configurations.
             type: dict
             suboptions:
               keepalive:
                 description:
-                - Frequency (in seconds) with which the FRR sends keepalive messages
-                  to its peer.
-                - The range is from 0 to 65535.
+                  - Frequency (in seconds) with which the FRR sends keepalive messages
+                    to its peer.
+                  - The range is from 0 to 65535.
                 type: int
                 required: true
               holdtime:
                 description:
-                - Interval (in seconds) after not receiving a keepalive message that
-                  FRR declares a peer dead.
-                - The range is from 0 to 65535.
+                  - Interval (in seconds) after not receiving a keepalive message that
+                    FRR declares a peer dead.
+                  - The range is from 0 to 65535.
                 type: int
                 required: true
           advertisement_interval:
             description:
-            - Minimum interval between sending BGP routing updates for this neighbor.
+              - Minimum interval between sending BGP routing updates for this neighbor.
             type: int
           local_as:
             description:
-            - The local AS number for the neighbor.
+              - The local AS number for the neighbor.
             type: int
           port:
             description:
-            - The TCP Port number to use for this neighbor.
-            - The range is from 0 to 65535.
+              - The TCP Port number to use for this neighbor.
+              - The range is from 0 to 65535.
             type: int
       networks:
         description:
-        - Specify networks to announce via BGP.
-        - For operation replace, this option is mutually exclusive with networks option
-          under address_family.
-        - For operation replace, if the device already has an address family activated,
-          this option is not allowed.
+          - Specify networks to announce via BGP.
+          - For operation replace, this option is mutually exclusive with networks option
+            under address_family.
+          - For operation replace, if the device already has an address family activated,
+            this option is not allowed.
         type: list
         elements: dict
         suboptions:
           prefix:
             description:
-            - Network ID to announce via BGP.
+              - Network ID to announce via BGP.
             required: true
             type: str
           masklen:
             description:
-            - Subnet mask length for the network to announce(e.g, 8, 16, 24, etc.).
+              - Subnet mask length for the network to announce(e.g, 8, 16, 24, etc.).
             required: true
             type: int
           route_map:
             description:
-            - Route map to modify the attributes.
+              - Route map to modify the attributes.
             type: str
       address_family:
         description:
-        - Specifies BGP address family related configurations.
+          - Specifies BGP address family related configurations.
         type: list
         elements: dict
         suboptions:
           afi:
             description:
-            - Type of address family to configure.
+              - Type of address family to configure.
             choices:
-            - ipv4
-            - ipv6
+              - ipv4
+              - ipv6
             required: true
             type: str
           safi:
             description:
-            - Specifies the type of cast for the address family.
+              - Specifies the type of cast for the address family.
             choices:
-            - flowspec
-            - unicast
-            - multicast
-            - labeled-unicast
+              - flowspec
+              - unicast
+              - multicast
+              - labeled-unicast
             default: unicast
             type: str
           redistribute:
@@ -170,112 +170,112 @@ options:
             suboptions:
               protocol:
                 description:
-                - Specifies the protocol for configuring redistribute information.
+                  - Specifies the protocol for configuring redistribute information.
                 choices:
-                - ospf
-                - ospf6
-                - eigrp
-                - isis
-                - table
-                - static
-                - connected
-                - sharp
-                - nhrp
-                - kernel
-                - babel
-                - rip
+                  - ospf
+                  - ospf6
+                  - eigrp
+                  - isis
+                  - table
+                  - static
+                  - connected
+                  - sharp
+                  - nhrp
+                  - kernel
+                  - babel
+                  - rip
                 required: true
                 type: str
               id:
                 description:
-                - Specifies the instance ID/table ID for this protocol
-                - Valid for ospf and table
+                  - Specifies the instance ID/table ID for this protocol
+                  - Valid for ospf and table
                 type: str
               metric:
                 description:
-                - Specifies the metric for redistributed routes.
+                  - Specifies the metric for redistributed routes.
                 type: int
               route_map:
                 description:
-                - Specifies the route map reference.
+                  - Specifies the route map reference.
                 type: str
           networks:
             description:
-            - Specify networks to announce via BGP.
-            - For operation replace, this option is mutually exclusive with root level
-              networks option.
+              - Specify networks to announce via BGP.
+              - For operation replace, this option is mutually exclusive with root level
+                networks option.
             type: list
             elements: dict
             suboptions:
               prefix:
                 description:
-                - Network ID to announce via BGP.
+                  - Network ID to announce via BGP.
                 required: true
                 type: str
               masklen:
                 description:
-                - Subnet mask length for the network to announce(e.g, 8, 16, 24, etc.).
+                  - Subnet mask length for the network to announce(e.g, 8, 16, 24, etc.).
                 required: true
                 type: int
               route_map:
                 description:
-                - Route map to modify the attributes.
+                  - Route map to modify the attributes.
                 type: str
           neighbors:
             description:
-            - Specifies BGP neighbor related configurations in Address Family configuration
-              mode.
+              - Specifies BGP neighbor related configurations in Address Family configuration
+                mode.
             type: list
             elements: dict
             suboptions:
               neighbor:
                 description:
-                - Neighbor router address.
+                  - Neighbor router address.
                 required: true
                 type: str
               route_reflector_client:
                 description:
-                - Specify a neighbor as a route reflector client.
+                  - Specify a neighbor as a route reflector client.
                 type: bool
               route_server_client:
                 description:
-                - Specify a neighbor as a route server client.
+                  - Specify a neighbor as a route server client.
                 type: bool
               activate:
                 description:
-                - Enable the address family for this neighbor.
+                  - Enable the address family for this neighbor.
                 type: bool
               remove_private_as:
                 description:
-                - Remove the private AS number from outbound updates.
+                  - Remove the private AS number from outbound updates.
                 type: bool
               next_hop_self:
                 description:
-                - Enable/disable the next hop calculation for this neighbor.
+                  - Enable/disable the next hop calculation for this neighbor.
                 type: bool
               maximum_prefix:
                 description:
-                - Maximum number of prefixes to accept from this peer.
-                - The range is from 1 to 4294967295.
+                  - Maximum number of prefixes to accept from this peer.
+                  - The range is from 1 to 4294967295.
                 type: int
   operation:
     description:
-    - Specifies the operation to be performed on the BGP process configured on the
-      device.
-    - In case of merge, the input configuration will be merged with the existing BGP
-      configuration on the device.
-    - In case of replace, if there is a diff between the existing configuration and
-      the input configuration, the existing configuration will be replaced by the
-      input configuration for every option that has the diff.
-    - In case of override, all the existing BGP configuration will be removed from
-      the device and replaced with the input configuration.
-    - In case of delete the existing BGP configuration will be removed from the device.
+      - Specifies the operation to be performed on the BGP process configured on the
+        device.
+      - In case of merge, the input configuration will be merged with the existing BGP
+        configuration on the device.
+      - In case of replace, if there is a diff between the existing configuration and
+        the input configuration, the existing configuration will be replaced by the
+        input configuration for every option that has the diff.
+      - In case of override, all the existing BGP configuration will be removed from
+        the device and replaced with the input configuration.
+      - In case of delete the existing BGP configuration will be removed from the device.
     default: merge
     choices:
-    - merge
-    - replace
-    - override
-    - delete
+      - merge
+      - replace
+      - override
+      - delete
     type: str
 """
 
@@ -287,26 +287,26 @@ EXAMPLES = """
       router_id: 192.0.2.1
       log_neighbor_changes: true
       neighbors:
-      - neighbor: 192.51.100.1
-        remote_as: 64497
-        timers:
-          keepalive: 120
-          holdtime: 360
-      - neighbor: 198.51.100.2
-        remote_as: 64498
+        - neighbor: 192.51.100.1
+          remote_as: 64497
+          timers:
+            keepalive: 120
+            holdtime: 360
+        - neighbor: 198.51.100.2
+          remote_as: 64498
       networks:
-      - prefix: 192.0.2.0
-        masklen: 24
-        route_map: RMAP_1
-      - prefix: 198.51.100.0
-        masklen: 24
+        - prefix: 192.0.2.0
+          masklen: 24
+          route_map: RMAP_1
+        - prefix: 198.51.100.0
+          masklen: 24
       address_family:
-      - afi: ipv4
-        safi: unicast
-        redistribute:
-        - protocol: ospf
-          id: 223
-          metric: 10
+        - afi: ipv4
+          safi: unicast
+          redistribute:
+            - protocol: ospf
+              id: 223
+              metric: 10
     operation: merge
 
 - name: Configure BGP neighbors
@@ -314,17 +314,17 @@ EXAMPLES = """
     config:
       bgp_as: 64496
       neighbors:
-      - neighbor: 192.0.2.10
-        remote_as: 64496
-        password: ansible
-        description: IBGP_NBR_1
-        timers:
-          keepalive: 120
-          holdtime: 360
-      - neighbor: 192.0.2.15
-        remote_as: 64496
-        description: IBGP_NBR_2
-        advertisement_interval: 120
+        - neighbor: 192.0.2.10
+          remote_as: 64496
+          password: ansible
+          description: IBGP_NBR_1
+          timers:
+            keepalive: 120
+            holdtime: 360
+        - neighbor: 192.0.2.15
+          remote_as: 64496
+          description: IBGP_NBR_2
+          advertisement_interval: 120
     operation: merge
 
 - name: Configure BGP neighbors under address family mode
@@ -332,16 +332,16 @@ EXAMPLES = """
     config:
       bgp_as: 64496
       address_family:
-      - afi: ipv4
-        safi: multicast
-        neighbors:
-        - neighbor: 203.0.113.10
-          activate: true
-          maximum_prefix: 250
+        - afi: ipv4
+          safi: multicast
+          neighbors:
+            - neighbor: 203.0.113.10
+              activate: true
+              maximum_prefix: 250
 
-        - neighbor: 192.0.2.15
-          activate: true
-          route_reflector_client: true
+            - neighbor: 192.0.2.15
+              activate: true
+              route_reflector_client: true
     operation: merge
 
 - name: Configure root-level networks for BGP
@@ -349,12 +349,12 @@ EXAMPLES = """
     config:
       bgp_as: 64496
       networks:
-      - prefix: 203.0.113.0
-        masklen: 27
-        route_map: RMAP_1
-      - prefix: 203.0.113.32
-        masklen: 27
-        route_map: RMAP_2
+        - prefix: 203.0.113.0
+          masklen: 27
+          route_map: RMAP_1
+        - prefix: 203.0.113.32
+          masklen: 27
+          route_map: RMAP_2
     operation: merge
 
 - name: remove bgp as 64496 from config
@@ -454,13 +454,20 @@ def main():
         "router_id": dict(),
         "log_neighbor_changes": dict(type="bool"),
         "neighbors": dict(type="list", elements="dict", options=neighbor_spec),
-        "address_family": dict(type="list", elements="dict", options=address_family_spec),
+        "address_family": dict(
+            type="list",
+            elements="dict",
+            options=address_family_spec,
+        ),
         "networks": dict(type="list", elements="dict", options=network_spec),
     }
 
     argument_spec = {
         "config": dict(type="dict", options=config_spec),
-        "operation": dict(default="merge", choices=["merge", "replace", "override", "delete"]),
+        "operation": dict(
+            default="merge",
+            choices=["merge", "replace", "override", "delete"],
+        ),
     }
 
     module = NetworkModule(argument_spec=argument_spec, supports_check_mode=True)

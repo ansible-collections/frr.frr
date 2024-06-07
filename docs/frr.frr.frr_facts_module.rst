@@ -77,18 +77,18 @@ Examples
     - name: Collect only the config and default facts
       frr.frr.frr_facts:
         gather_subset:
-        - config
+          - config
 
     - name: Collect the config and hardware facts
       frr.frr.frr_facts:
         gather_subset:
-        - config
-        - hardware
+          - config
+          - hardware
 
     - name: Do not collect hardware facts
       frr.frr.frr_facts:
         gather_subset:
-        - '!hardware'
+          - '!hardware'
 
 
 

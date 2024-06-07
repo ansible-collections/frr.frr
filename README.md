@@ -1,7 +1,4 @@
-
-
 # Free Range Routing (FRR) Collection
-[![CI](https://zuul-ci.org/gated.svg)](https://dashboard.zuul.ansible.com/t/ansible/project/github.com/ansible-collections/frr.frr)
 [![Codecov](https://codecov.io/gh/ansible-collections/frr.frr/branch/main/graph/badge.svg)](https://codecov.io/gh/ansible-collections/frr.frr)
 
 
@@ -12,7 +9,7 @@ This collection has been tested against FRR 6.0.
 <!--start requires_ansible-->
 ## Ansible version compatibility
 
-This collection has been tested against following Ansible versions: **>=2.9.10**.
+This collection has been tested against following Ansible versions: **>=2.15.0**.
 
 For collections that support Ansible 2.9, please ensure you update your `network_os` to use the
 fully qualified collection name (for example, `cisco.ios.ios`).
