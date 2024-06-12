@@ -4,7 +4,6 @@ repos:
     rev: 1.1.1
     hooks:
       - id: autoversion
-      - id: update-docs
 
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v4.4.0
@@ -54,6 +53,6 @@ repos:
         name: Sort import statements using isort
 
   - repo: https://github.com/psf/black
-    rev: 23.3.0
+    rev: 24.4.2
     hooks:
       - id: black

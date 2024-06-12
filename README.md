@@ -4,6 +4,7 @@
 [![CI](https://zuul-ci.org/gated.svg)](https://dashboard.zuul.ansible.com/t/ansible/project/github.com/ansible-collections/frr.frr)
 [![Codecov](https://codecov.io/gh/ansible-collections/frr.frr/branch/main/graph/badge.svg)](https://codecov.io/gh/ansible-collections/frr.frr)
 
+⚠️ **The frr.frr collection has been [deprecated](https://forum.ansible.com/t/the-bullhorn-123/2568#project-updates-8) and will reach it's end-of-life on December, 2025. We are no longer accepting new pull requests, except for ones that fix critical bugs or security vulnerabilities. Compatibility with ansible-core>2.17 is not guaranteed.**
 
 The Ansible FRR collection includes a variety of Ansible content to help automate the management of FRR network appliances.
 
@@ -12,10 +13,8 @@ This collection has been tested against FRR 6.0.
 <!--start requires_ansible-->
 ## Ansible version compatibility
 
-This collection has been tested against following Ansible versions: **>=2.9.10**.
+This collection is tested against following Ansible versions: **<2.18.0,>=2.15.0**.
 
-For collections that support Ansible 2.9, please ensure you update your `network_os` to use the
-fully qualified collection name (for example, `cisco.ios.ios`).
 Plugins and modules within a collection may be tested with only specific Ansible versions.
 A collection may contain metadata that identifies these versions.
 PEP440 is the schema used to describe the versions of Ansible.
