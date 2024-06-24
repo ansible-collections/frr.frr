@@ -12,22 +12,29 @@ on:  # yamllint disable-line rule:truthy
   schedule:
     - cron: '0 0 * * *'
 
+# Due to an issue in GHA runner, MATRIX_EXCLUDE is set as an environment variable
+# https://github.com/actions/runner/issues/2372
 jobs:
   ansible-lint:
     uses: ansible-network/github_actions/.github/workflows/ansible-lint.yml@main
   changelog:
     uses: ansible-network/github_actions/.github/workflows/changelog.yml@main
-    if: github.event_name != 'schedule'
+    if: github.event_name == 'pull_request'
   sanity:
     uses: ansible-network/github_actions/.github/workflows/sanity.yml@main
+    with:
+      matrix_exclude: ${{ vars.MATRIX_EXCLUDE }}
   unit-galaxy:
     uses: ansible-network/github_actions/.github/workflows/unit_galaxy.yml@main
+    with:
+      matrix_exclude: ${{ vars.MATRIX_EXCLUDE }}
   unit-source:
     uses: ansible-network/github_actions/.github/workflows/unit_source.yml@main
     with:
       collection_pre_install: >-
         git+https://github.com/ansible-collections/ansible.utils.git
         git+https://github.com/ansible-collections/ansible.netcommon.git
+      matrix_exclude: ${{ vars.MATRIX_EXCLUDE }}
   all_green:
     if: ${{ always() && (github.event_name != 'schedule') }}
     needs:
@@ -39,10 +46,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: >-
-          python -c "assert set([
+          python -c "assert 'failure' not in
+          set([
           '${{ needs.ansible-lint.result }}',
           '${{ needs.changelog.result }}',
           '${{ needs.sanity.result }}',
           '${{ needs.unit-galaxy.result }}',
           '${{ needs.unit-source.result }}'
-          ]) == {'success'}"
+          ])"
