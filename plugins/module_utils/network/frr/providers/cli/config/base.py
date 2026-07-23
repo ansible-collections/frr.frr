@@ -8,7 +8,6 @@ from __future__ import absolute_import, division, print_function
 __metaclass__ = type
 
 
-from ansible.module_utils.six import iteritems
 from ansible_collections.ansible.netcommon.plugins.module_utils.network.common.config import (
     NetworkConfig,
 )
@@ -30,11 +29,11 @@ class ConfigBase(object):
         for item in self.identifier:
             self.values[item] = kwargs.pop(item)
 
-        for key, value in iteritems(kwargs):
+        for key, value in kwargs.items():
             if key in self.argument_spec:
                 setattr(self, key, value)
 
-        for key, value in iteritems(self.argument_spec):
+        for key, value in self.argument_spec.items():
             if value.get("default"):
                 if not getattr(self, key, None):
                     setattr(self, key, value.get("default"))

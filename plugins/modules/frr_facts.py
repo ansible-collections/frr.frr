@@ -117,7 +117,6 @@ import platform
 import re
 
 from ansible.module_utils.basic import AnsibleModule
-from ansible.module_utils.six import iteritems
 
 from ansible_collections.frr.frr.plugins.module_utils.network.frr.frr import (
     get_capabilities,
@@ -200,7 +199,7 @@ class Hardware(FactsBase):
         for item in mem_details:
             daemon = self._parse_daemons(item)
             mem_stats[daemon] = {}
-            for fact, pattern in iteritems(mem_counters):
+            for fact, pattern in mem_counters.items():
                 mem_stats[daemon][fact] = self.parse_facts(pattern, item)
 
         return mem_stats
@@ -282,9 +281,9 @@ class Interfaces(FactsBase):
             "operstatus": r"^(?:.+) is (.+),",
         }
 
-        for key, value in iteritems(interfaces):
+        for key, value in interfaces.items():
             intf = dict()
-            for fact, pattern in iteritems(counters):
+            for fact, pattern in counters.items():
                 intf[fact] = self.parse_facts(pattern, value)
             facts[key] = intf
         return facts
@@ -395,7 +394,7 @@ def main():
         facts.update(inst.facts)
 
     ansible_facts = dict()
-    for key, value in iteritems(facts):
+    for key, value in facts.items():
         key = "ansible_net_%s" % key
         ansible_facts[key] = value
 

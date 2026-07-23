@@ -11,7 +11,6 @@ __metaclass__ = type
 
 import re
 
-from ansible.module_utils.six import iteritems
 from ansible_collections.ansible.netcommon.plugins.module_utils.network.common.utils import to_list
 
 from ansible_collections.frr.frr.plugins.module_utils.network.frr.providers.cli.config.bgp.neighbors import (
@@ -38,7 +37,7 @@ class AddressFamily(CliProvider):
                 context_path = [router_context, context]
                 context_config = self.get_config_context(config, context_path, indent=1)
 
-            for key, value in iteritems(item):
+            for key, value in item.items():
                 if value is not None:
                     meth = getattr(self, "_render_%s" % key, None)
                     if meth:
