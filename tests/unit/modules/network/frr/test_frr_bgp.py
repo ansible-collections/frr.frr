@@ -5,7 +5,6 @@
 
 from __future__ import absolute_import, division, print_function
 
-
 __metaclass__ = type
 
 from ansible_collections.frr.frr.plugins.module_utils.network.frr.providers.cli.config.bgp.process import (
