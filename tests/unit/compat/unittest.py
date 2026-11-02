@@ -18,7 +18,6 @@
 # Make coding more python3-ish
 from __future__ import absolute_import, division, print_function
 
-
 __metaclass__ = type
 
 """
@@ -26,7 +25,6 @@ Compat module for Python2.7's unittest module
 """
 
 import sys
-
 
 # Allow wildcard import because we really do want to import all of
 # unittests's symbols into this compat shim
